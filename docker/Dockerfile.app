@@ -10,4 +10,4 @@ RUN npm i
 
 COPY .. .
 
-CMD ["npx", "nx", "run", "shop-magicbeauty:serve"]
+CMD ["npx", "nx", "run", "magicbeauty:serve"]
