@@ -1,0 +1,1 @@
+export { TypeIbg } from './TypeIbg';

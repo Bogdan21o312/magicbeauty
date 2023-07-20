@@ -1,0 +1,68 @@
+@use 'sass:math';
+@import 'libs/common/src/shared/assets/styles/style';
+
+.ibg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Container ====================================================================================================
+
+@if ($responsiveType==1) {
+  // Чуйна
+  .container {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($containerWidth);
+      margin: 0 auto;
+    }
+  }
+  @if ($containerPadding>0) {
+    @if ($maxWidthContainer>0) {
+      .retreat {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    } @else {
+      .retreat {
+        @include adaptiveValue(
+          'padding-left',
+          math.div($containerPadding, 2),
+          15
+        );
+        @include adaptiveValue(
+          'padding-right',
+          math.div($containerPadding, 2),
+          15
+        );
+      }
+    }
+  }
+} @else {
+  // Брейк-поїнтами
+  .container {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($containerWidth);
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+  }
+  @media (max-width: $mobile) {
+    @if ($containerPadding>0 and $maxWidthContainer>0) {
+      .retreat {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+  }
+  @if ($containerPadding>0) {
+    .retreat {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+  }
+}

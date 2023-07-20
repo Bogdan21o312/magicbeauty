@@ -1,0 +1,15 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // Press the footer
+  > main {
+    flex: 1 1 auto;
+  }
+
+  // Fix for sliders
+  > * {
+    min-width: 0;
+  }
+}
