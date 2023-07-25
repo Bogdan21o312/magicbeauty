@@ -8,7 +8,7 @@ export function ModalWindow({isModalWindow, setModalWindow, hash, title, childre
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
-      if (event.keyCode === 27) {
+      if (event.key === "Escape") {
         handleModalClose()
       }
     };

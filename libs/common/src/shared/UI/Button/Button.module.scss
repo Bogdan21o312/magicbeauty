@@ -1,0 +1,53 @@
+@use "sass:math";
+@import 'libs/common/src/shared/assets/styles/style';
+
+// Main ====================================================================================================
+
+.main {
+  box-shadow: 0 rem(4) rem(20) rgba(255, 0, 144, 0.5);
+  border-radius: rem(3);
+  line-height: math.div(46, 18);
+  font-size: rem(18);
+  padding: rem(2) rem(10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(16);
+  background-color: $ColorMain;
+  font-weight: 600;
+  color: $ColorWhite;
+  transition: all 0.3s ease 0s;
+  path  {
+    transition: all 0.3s ease 0s;
+    stroke: $ColorWhite;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(0.9);
+      background-color: rgb(255, 255, 255);
+      color: $ColorMain;
+      box-shadow: 0 rem(4) rem(20) rgba(255, 0, 144, 0.38);
+      path  {
+        stroke: $ColorMain;
+      }
+    }
+  }
+
+}
+
+.clWidthHundredPercent {
+  width: 100%;
+}
+
+.clPrimary {
+  padding: rem(20) rem(40);
+}
+
+
+.clSecondary {
+  padding: rem(4) rem(10);
+}
+
+.clBorder {
+  border-radius: rem(40);
+}

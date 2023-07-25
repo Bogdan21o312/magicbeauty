@@ -1,5 +1,5 @@
 // UI
-export {Ibg, Wrapper, ModalWindow} from './UI';
+export {Ibg, Wrapper, ModalWindow, Button} from './UI';
 // Types
 export {TypeIbg} from './types';
 // Icons

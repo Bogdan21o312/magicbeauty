@@ -6,6 +6,7 @@ export {
   Wrapper,
   Ibg,
   ModalWindow,
+  Button,
   // Icons
   IconSearch, IconBookmark, IconPhone, IconCart, IconClose
 } from './shared';
