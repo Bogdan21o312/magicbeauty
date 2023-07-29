@@ -15,26 +15,31 @@ function generateRandom16DigitNumber() {
 export async function uploadImage(data: FormData) {
     'use server'
     const file = data.get('file') as File;
-    const publicId = generateRandom16DigitNumber(); // Генеруємо 16-значне число
+    const publicId = generateRandom16DigitNumber();
 
     const imageUrl = await new Promise<string>((resolve, reject) => {
-        const stream = cloudinary.v2.uploader.upload_stream({ public_id: publicId }, (error, result) => {
+        const stream = cloudinary.v2.uploader.upload_stream({public_id: publicId}, (error, result) => {
             if (error) {
                 console.error(error);
                 reject('Помилка завантаження зображення');
             } else {
                 console.log(result);
-                // Отримуємо URL завантаженого зображення з Cloudinary
                 const imageUrl = result.secure_url;
                 resolve(imageUrl);
             }
         });
 
-        // Передача файлу в cloudinary.uploader.upload_stream
         file.arrayBuffer().then(buffer => {
             const uint8Array = new Uint8Array(buffer);
             stream.end(Buffer.from(uint8Array));
         });
+    });
+
+    // Зберігаємо адресу зображення у моделі Image за допомогою Prisma
+    await prisma.image.create({
+        data: {
+            path: imageUrl,
+        },
     });
 
     return imageUrl;

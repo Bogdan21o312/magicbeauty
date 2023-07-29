@@ -3,7 +3,7 @@ import {revalidatePath} from "next/cache";
 import {z} from 'zod';
 import Image from "next/image";
 import {Create} from "./create";
-import {ImageItem} from "./Images";
+import {ImageItem} from "./ImageItem";
 
 const createUserSchema = z.object({
     email: z.string()
