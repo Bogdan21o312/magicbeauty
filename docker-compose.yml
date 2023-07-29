@@ -37,6 +37,9 @@ services:
       - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_CLIENT=${POSTGRES_CLIENT}
       - DATABASE_URL=${DATABASE_URL}
+      - CLOUD_NAME=${CLOUD_NAME}
+      - API_KEY=${API_KEY}
+      - API_SECRET=${API_SECRET}
     networks:
       - app
     depends_on:
