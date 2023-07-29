@@ -1,24 +1,41 @@
-'use client'
-import {ModalWindow} from "@magicbeauty/common";
-import {useState} from "react";
+import {prisma} from "@magicbeauty/common";
+import {revalidatePath} from "next/cache";
+import { z } from 'zod';
 
-export default function Index() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const createUserSchema = z.object({
+  email: z.string()
+})
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+async function createUser(data: FormData) {
+  "use server"
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const createUser = createUserSchema.parse({
+    email: data.get("email")
+  })
+  const user = await prisma.user.create({
+    data: createUser
+  })
+  if (user) {
+    console.log(user)
+    revalidatePath('/')
+  }
+}
+export default async function Index() {
+
+  const users = await prisma.user.findMany()
+
   return (
     <div>
-      <button onClick={handleOpenModal}>Open Modal</button>
-      <ModalWindow isModalWindow={isModalOpen} setModalWindow={setIsModalOpen} hash="popup">
-        <h2>Modal Content</h2>
-        <p>This is the content of the modal window.</p>
-      </ModalWindow>
+      <form action={createUser}>
+        <input placeholder='Email' name="email" />
+        <button>ADD</button>
+      </form>
+      {users.map(user =>
+        <div key={user.id}>
+          <div>{user.id}</div>
+          <div>{user.email}</div>
+        </div>
+      )}
     </div>
   );
 }

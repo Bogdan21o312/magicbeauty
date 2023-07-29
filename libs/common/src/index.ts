@@ -10,3 +10,7 @@ export {
   // Icons
   IconSearch, IconBookmark, IconPhone, IconCart, IconClose
 } from './shared';
+
+// Actions
+
+export {prisma} from "./actions"

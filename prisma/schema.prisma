@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+}
+
+model Post {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+}
+
+model Image {
+  id       Int    @id @default(autoincrement())
+  image    Bytes // Поле для зберігання байтів зображення
+  fileName String // Поле для зберігання назви файлу зображення
+}
