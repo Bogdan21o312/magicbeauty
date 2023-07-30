@@ -1,0 +1,1 @@
+export { LayoutShop } from './layouts';

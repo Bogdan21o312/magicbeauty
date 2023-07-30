@@ -1,5 +1,6 @@
 // Entites
 export {EntityContainer} from './entites';
+
 // Shared
 export {
   // UI
@@ -12,6 +13,8 @@ export {
 } from './shared';
 
 // Actions
-
 export {prisma} from "./actions"
 export {cloudinarya} from "./actions/lib/cloudinary"
+
+// Widgets
+export {LayoutShop} from "./widgets"
