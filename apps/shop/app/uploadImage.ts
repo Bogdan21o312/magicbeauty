@@ -1,12 +1,5 @@
 import {prisma} from "@magicbeauty/common";
 import cloudinary from "cloudinary";
-import {revalidatePath} from "next/cache";
-import {z} from "zod";
-
-const createImageSchema = z.object({
-    path: z.string(),
-    file: z.any()
-})
 
 function generateRandom16DigitNumber() {
     return Math.floor(Math.random() * 1e16).toString();
