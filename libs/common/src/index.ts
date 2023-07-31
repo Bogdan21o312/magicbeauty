@@ -26,9 +26,5 @@ export {
     IconPlus
 } from './shared';
 
-// Actions
-export {prisma} from "./actions"
-export {cloudinarya} from "./actions/lib/cloudinary"
-
 // Widgets
 export {LayoutShop} from "./widgets"

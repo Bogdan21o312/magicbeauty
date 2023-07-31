@@ -9,7 +9,7 @@ export function ModalWindow({children, title, visible, setVisible, hashUrl}: Mod
     const {closeModalWindow, stopPropagation} = useModalWindow(hashUrl, visible, setVisible);
 
     const isVisible = visible ? classes.active : '';
-    const mainClasses = `${classes.modal} ${isVisible} ${hashUrl ? classes.showPopup : ''}`;
+    const mainClasses = `${classes.modal} ${isVisible} ${hashUrl === hashUrl ? classes.showPopup : ''}`;
 
     return (
         <div

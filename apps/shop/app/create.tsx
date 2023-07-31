@@ -1,6 +1,5 @@
 import {uploadImage} from "./uploadImage";
 
-
 export function Create() {
 
   return (

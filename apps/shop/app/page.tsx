@@ -1,8 +1,9 @@
-import {prisma} from "@magicbeauty/common";
+import {prisma} from "@magicbeauty/common/server";
 import {revalidatePath} from "next/cache";
 import {z} from 'zod';
 import {Create} from "./create";
 import {ImageItem} from "./ImageItem";
+import {Test} from "./Test";
 
 const createUserSchema = z.object({
   email: z.string()
@@ -44,6 +45,7 @@ export default async function Index() {
 
   return (
     <div>
+      <Test/>
       <form action={createUser}>
         <input placeholder='Email' name="email"/>
         <button>ADD</button>

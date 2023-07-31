@@ -38,23 +38,26 @@
     animation-duration: 0.3s;
     @include adaptiveValue("padding", 20, 15);
     background-color: white;
-    border-radius: rem(10);
+    border-radius: rem(24);
     @include adaptiveValue("min-width", 500, 300);
-
-
+    border: rem(4) solid $ColorMain;
+    min-height: rem(400);
     max-width: 80%;
   }
 
   &Top {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     @include adaptiveValue("padding-bottom", 40, 20);
+    gap: rem(20);
   }
 
   &Close {
-    @include adaptiveValue("width", 40, 30);
-    @include adaptiveValue("height", 40, 30);
+    @include adaptiveValue("min-width", 40, 50);
+    @include adaptiveValue("min-height", 40, 50);
+    @include adaptiveValue("max-width", 40, 50);
+    @include adaptiveValue("max-height", 40, 50);
     border-radius: 50%;
     border: rem(2) solid $ColorMain;
     transition: all 0.3s ease 0s;
