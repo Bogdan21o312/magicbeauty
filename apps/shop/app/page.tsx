@@ -1,7 +1,6 @@
 import {prisma} from "@magicbeauty/common";
 import {revalidatePath} from "next/cache";
 import {z} from 'zod';
-import Image from "next/image";
 import {Create} from "./create";
 import {ImageItem} from "./ImageItem";
 

@@ -14,13 +14,16 @@ export {
     Wrapper,
     Ibg,
     Loader,
-    NEWS_PAGE_URL,
-    HOME_PAGE_URL,
-    OPT_PAGE_URL,
-    ABOUT_PAGE_URL,
-    CATEGORIES_PAGE_URL,
     TypeIbg,
-    Container
+    Container,
+    SHOP_OPT_PAGE_URL,
+    SHOP_HOME_PAGE_URL,
+    SHOP_ABOUT_PAGE_URL,
+    SHOP_NEWS_PAGE_URL,
+    SHOP_CATEGORIES_PAGE_URL,
+    regexMobileType,
+    regexTabletType,
+    IconPlus
 } from './shared';
 
 // Actions
