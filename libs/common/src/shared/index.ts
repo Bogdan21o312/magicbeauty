@@ -1,5 +1,8 @@
 // UI
-export {Ibg, Wrapper, ModalWindow, Button} from './UI';
+export {Ibg, Wrapper, Button, Text, Loader} from './UI';
+
+// Components
+export {ModalWindow, Container} from "./components"
 
 // Types
 export {TypeIbg} from './types';

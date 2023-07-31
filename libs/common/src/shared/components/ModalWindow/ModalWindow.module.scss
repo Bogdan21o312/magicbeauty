@@ -1,0 +1,87 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+
+  &.active {
+    pointer-events: auto;
+    animation-name: appear;
+    animation-duration: 0.3s;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &Body {
+    animation-name: appear;
+    animation-duration: 0.3s;
+    @include adaptiveValue("padding", 20, 15);
+    background-color: white;
+    border-radius: rem(10);
+    @include adaptiveValue("min-width", 500, 300);
+
+
+    max-width: 80%;
+  }
+
+  &Top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiveValue("padding-bottom", 40, 20);
+  }
+
+  &Close {
+    @include adaptiveValue("width", 40, 30);
+    @include adaptiveValue("height", 40, 30);
+    border-radius: 50%;
+    border: rem(2) solid $ColorMain;
+    transition: all 0.3s ease 0s;
+
+    svg {
+      transform: rotate(45deg);
+      transition: all 0.3s ease 0s;
+    }
+
+    path {
+      transition: all 0.3s ease 0s;
+      fill: $ColorMain !important;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $ColorMain;
+        border: rem(2) solid $ColorWhite;
+
+        svg {
+          transform: rotate(135deg);
+        }
+
+        path {
+          fill: $ColorWhite !important;
+        }
+      }
+    }
+  }
+}

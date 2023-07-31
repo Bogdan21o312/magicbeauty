@@ -27,14 +27,14 @@
     } @else {
       .retreat {
         @include adaptiveValue(
-          'padding-left',
-          math.div($containerPadding, 2),
-          15
+                        'padding-left',
+                        math.div($containerPadding, 2),
+                        15
         );
         @include adaptiveValue(
-          'padding-right',
-          math.div($containerPadding, 2),
-          15
+                        'padding-right',
+                        math.div($containerPadding, 2),
+                        15
         );
       }
     }

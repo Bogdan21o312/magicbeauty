@@ -2,13 +2,12 @@
 import classes from './Header.module.scss';
 import Link from 'next/link';
 import {links} from './links';
-import {HOME_PAGE_URL, IconSearch} from "../../../../shared"
-import {EntityContainer} from "../../../../entites"
+import {Container, HOME_PAGE_URL, IconSearch} from "../../../../shared"
 
 export function Header() {
   return (
     <header className={classes.header}>
-      <EntityContainer>
+      <Container>
         <div className={classes.logo}>
           <Link href={HOME_PAGE_URL}>LOGO</Link>
         </div>
@@ -28,7 +27,7 @@ export function Header() {
             <IconSearch/>
           </button>
         </div>
-      </EntityContainer>
+      </Container>
     </header>
   );
 }

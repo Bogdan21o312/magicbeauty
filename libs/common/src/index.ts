@@ -1,15 +1,26 @@
 // Entites
-export {EntityContainer} from './entites';
+export {} from './entites';
 
 // Shared
 export {
-  // UI
-  Wrapper,
-  Ibg,
-  ModalWindow,
-  Button,
-  // Icons
-  IconSearch, IconBookmark, IconPhone, IconCart, IconClose
+    ModalWindow,
+    Button,
+    IconSearch,
+    IconBookmark,
+    IconClose,
+    IconCart,
+    IconPhone,
+    Text,
+    Wrapper,
+    Ibg,
+    Loader,
+    NEWS_PAGE_URL,
+    HOME_PAGE_URL,
+    OPT_PAGE_URL,
+    ABOUT_PAGE_URL,
+    CATEGORIES_PAGE_URL,
+    TypeIbg,
+    Container
 } from './shared';
 
 // Actions
