@@ -17,8 +17,7 @@ export function Test() {
 
     return (
         <div>
-            <button onClick={openModal}>Відкрити модальне вікно</button>
-            <Button>lorem</Button>
+            <Button onClick={openModal}>lorem</Button>
             <ModalWindow
                 title="Заголовок модального вікна"
                 visible={isModalVisible}

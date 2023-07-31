@@ -3,7 +3,7 @@ import {
     SHOP_CATEGORIES_PAGE_URL,
     SHOP_HOME_PAGE_URL, SHOP_NEWS_PAGE_URL, SHOP_OPT_PAGE_URL
 
-} from '../../../../shared';
+} from '../../../../../../shared';
 
 export const links = [
     {

@@ -11,7 +11,6 @@ export {TypeIbg} from './types';
 export {IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus} from "./assets"
 
 // Constants
-
 export {
     SHOP_OPT_PAGE_URL,
     SHOP_NEWS_PAGE_URL,
@@ -21,3 +20,7 @@ export {
     regexTabletType,
     regexMobileType
 } from './constants';
+
+// Lib
+
+export {useDeviceType, bodyLock, bodyToggleLock, bodyUnlock, useMediaQuery} from "./lib"
