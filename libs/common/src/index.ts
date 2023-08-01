@@ -23,8 +23,6 @@ export {
     SHOP_CATEGORIES_PAGE_URL,
     regexMobileType,
     regexTabletType,
-    IconPlus
+    IconPlus,
+    bodyUnlock, bodyLock, bodyToggleLock, useMediaQuery, BurgerMenu
 } from './shared';
-
-// Widgets
-export {LayoutShop} from "./widgets"

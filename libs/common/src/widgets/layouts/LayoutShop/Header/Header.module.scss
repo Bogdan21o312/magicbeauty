@@ -1,7 +1,15 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
 .header {
-  //position: fixed;
-  background: pink;
+  position: fixed;
+  width: 100%;
+  transition: all 0.3s ease 0s;
+  background-color: $ColorMain;
+  padding: rem(10) rem(0);
 }
 
-.menu {
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

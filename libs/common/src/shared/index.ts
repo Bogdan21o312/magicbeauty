@@ -1,5 +1,5 @@
 // UI
-export {Ibg, Wrapper, Button, Text, Loader} from './UI';
+export {Ibg, Wrapper, Button, Text, Loader, BurgerMenu} from './UI';
 
 // Components
 export {ModalWindow, Container} from "./components"
@@ -8,7 +8,7 @@ export {ModalWindow, Container} from "./components"
 export {TypeIbg} from './types';
 
 // Icons
-export {IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus} from "./assets"
+export {IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop} from "./assets"
 
 // Constants
 export {
