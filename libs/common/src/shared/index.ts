@@ -1,5 +1,5 @@
 // UI
-export {Ibg, Wrapper, Button, Text, Loader, BurgerMenu} from './UI';
+export {Ibg, Wrapper, Button, Text, Loader, BurgerMenu, LogoShop} from './UI';
 
 // Components
 export {ModalWindow, Container} from "./components"
@@ -8,7 +8,7 @@ export {ModalWindow, Container} from "./components"
 export {TypeIbg, TypeDeviceType} from './types';
 
 // Icons
-export {IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop} from "./assets"
+export {IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop, IconBag} from "./assets"
 
 // Constants
 export {
@@ -22,4 +22,4 @@ export {
 } from './constants';
 
 // Lib
-export {useDeviceType, bodyLock, bodyToggleLock, bodyUnlock, useMediaQuery} from "./lib"
+export {useDeviceType, bodyLock, bodyToggleLock, bodyUnlock, useMediaQuery, useScrollLessThanY} from "./lib"
