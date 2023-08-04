@@ -1,5 +1,5 @@
-import './global.css';
-import {LayoutShop} from "@magicbeauty/common";
+import 'libs/common/src/shared/assets/styles/globals.scss';
+import {LayoutShop} from "@magicbeauty/common/server";
 
 export const metadata = {
   title: 'Welcome to shop',

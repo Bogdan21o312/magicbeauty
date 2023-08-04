@@ -1,0 +1,78 @@
+@use "sass:math";
+@import 'libs/common/src/shared/assets/styles/style';
+
+// MainSlider ====================================================================================================
+
+.clMain {
+  position: static;
+}
+
+// Title ====================================================================================================
+
+
+.clTitleBig {
+  font-weight: 700;
+  font-size: rem(36);
+  line-height: math.div(46, 36);
+}
+
+.clTitle {
+  font-weight: 700;
+  font-size: rem(30);
+  line-height: math.div(46, 30);
+}
+
+.clTitleSub {
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: math.div(34, 18);
+}
+
+// Text ====================================================================================================
+
+.clText {
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: math.div(27, 18);
+}
+
+.clTextSmall {
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: math.div(27, 14);
+}
+
+// CustomLink ====================================================================================================
+
+.clLink {
+  font-weight: 600;
+  font-size: rem(18);
+  line-height: math.div(46, 18);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $ColorMain;
+    }
+  }
+}
+
+// Center ====================================================================================================
+
+.clCenter {
+  text-align: center;
+}
+
+// Opacity ====================================================================================================
+
+.clOpacity {
+  opacity: 0.6;
+}
+
+// Light ====================================================================================================
+
+.clLight {
+  color: $ColorWhite;
+}
+
+//====================================================================================================

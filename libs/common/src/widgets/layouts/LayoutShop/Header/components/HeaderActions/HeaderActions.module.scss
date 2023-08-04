@@ -1,0 +1,78 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.action {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  &.touchScreenOrMediaQuery {
+    gap: rem(12);
+    @media (max-width: em(600)) {
+      gap: rem(2);
+    }
+  }
+
+  &.scroll {
+    .icon {
+      min-width: rem(40);
+      min-height: rem(40);
+      max-width: rem(40);
+      max-height: rem(40);
+    }
+  }
+}
+
+.icon {
+  transition: all 0.3s ease 0s;
+  border-radius: rem(50);
+  min-width: rem(50);
+  min-height: rem(50);
+  max-width: rem(50);
+  max-height: rem(50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  path,
+  svg {
+    fill: $ColorWhite !important;
+    min-width: rem(30);
+    max-width: rem(30);
+  }
+
+  &.cart {
+    path, {
+      fill: none !important;
+      stroke: $ColorWhite !important;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 7px 7px 10px -2px rgba(0, 0, 0, 0.75);
+      background-color: $ColorWhite;
+
+      path,
+      svg {
+        fill: $ColorMain !important;
+      }
+
+      &.cart {
+        path, {
+          fill: none !important;
+          stroke: $ColorMain !important;
+        }
+      }
+    }
+  }
+  @media (max-width: em(600)) {
+    min-width: rem(40);
+    min-height: rem(40);
+    max-width: rem(40);
+    max-height: rem(40);
+  }
+}
+
+.burger {
+  margin-left: rem(12);
+}

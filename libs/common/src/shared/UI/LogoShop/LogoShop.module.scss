@@ -1,0 +1,53 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.logo {
+  padding: rem(10) rem(11);
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6);
+  font-family: Koulen;
+  font-weight: 400;
+  font-size: rem(20);
+  text-transform: uppercase;
+  color: $ColorWhite;
+  border: rem(1) solid $ColorWhite;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+
+  svg {
+    display: block;
+    max-width: rem(32);
+    min-width: rem(32);
+  }
+
+  @media (max-width: em(991.98)) {
+    font-size: rem(16);
+    padding: rem(4) rem(7);
+
+    svg {
+      max-width: rem(26);
+      min-width: rem(26);
+    }
+  }
+
+  &.small {
+    font-size: rem(10);
+    padding: rem(4) rem(7);
+
+    svg {
+      max-width: rem(20);
+      min-width: rem(20);
+    }
+  }
+
+  &.withoutText {
+    max-width: rem(40);
+    min-width: rem(40);
+    min-height: rem(40);
+    max-height: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+}
