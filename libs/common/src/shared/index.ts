@@ -5,7 +5,7 @@ export {Ibg, Wrapper, Button, Text, Loader, BurgerMenu} from './UI';
 export {ModalWindow, Container} from "./components"
 
 // Types
-export {TypeIbg} from './types';
+export {TypeIbg, TypeDeviceType} from './types';
 
 // Icons
 export {IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop} from "./assets"
@@ -22,5 +22,4 @@ export {
 } from './constants';
 
 // Lib
-
 export {useDeviceType, bodyLock, bodyToggleLock, bodyUnlock, useMediaQuery} from "./lib"
