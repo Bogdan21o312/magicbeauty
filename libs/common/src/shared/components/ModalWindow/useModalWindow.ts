@@ -1,5 +1,5 @@
-import {useState, MouseEvent, useEffect} from "react";
-import {bodyLock, bodyUnlock} from "../../lib";
+import {useState, MouseEvent, useEffect} from "react"
+import {bodyLock, bodyUnlock} from "../../lib"
 
 interface IUseModalWindow {
     closeModalWindow: () => void;
@@ -11,58 +11,58 @@ export function useModalWindow(
     visible: boolean,
     setVisible: (value: boolean) => void
 ): IUseModalWindow {
-    const [hash, setHash] = useState<string>("");
+    const [hash, setHash] = useState<string>("")
 
     const closeModalWindow = () => {
-        setVisible(false);
+        setVisible(false)
         if (hash === hashUrl) {
-            window.history.pushState({}, document.title, window.location.pathname);
+            window.history.pushState({}, document.title, window.location.pathname)
         }
-    };
+    }
 
     const stopPropagation = (e: MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
-    };
+        e.stopPropagation()
+    }
 
     useEffect(() => {
-        setHash(window.location.hash.substr(1));
-    }, []);
+        setHash(window.location.hash.substr(1))
+    }, [])
 
     useEffect(() => {
         if (hash === hashUrl) {
-            setVisible(true);
+            setVisible(true)
         }
-    }, [hash]);
+    }, [hash])
 
     useEffect(() => {
         if (visible) {
-            bodyLock();
+            bodyLock()
         } else {
-            bodyUnlock();
+            bodyUnlock()
         }
 
         return () => {
-            bodyUnlock();
-        };
-    }, [visible]);
+            bodyUnlock()
+        }
+    }, [visible])
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
-                closeModalWindow();
+                closeModalWindow()
                 if (hash === hashUrl) {
-                    window.history.pushState({}, document.title, window.location.pathname);
+                    window.history.pushState({}, document.title, window.location.pathname)
                 }
             }
-        };
+        }
 
-        window.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("keydown", handleKeyDown)
 
         return () => {
-            window.removeEventListener("keydown", handleKeyDown);
-        };
-    }, []);
+            window.removeEventListener("keydown", handleKeyDown)
+        }
+    }, [])
 
-    return {closeModalWindow, stopPropagation};
+    return {closeModalWindow, stopPropagation}
 }
 

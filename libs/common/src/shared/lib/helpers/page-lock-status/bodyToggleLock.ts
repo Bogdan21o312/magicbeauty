@@ -1,3 +1,3 @@
 export function bodyToggleLock() {
-    document.body.classList.toggle('lock');
+    document.body.classList.toggle('lock')
 }

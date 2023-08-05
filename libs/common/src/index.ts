@@ -1,5 +1,5 @@
 // Entites
-export {} from './entites';
+export {} from './entites'
 
 // Shared
 export {
@@ -25,4 +25,4 @@ export {
     regexTabletType,
     IconPlus,
     bodyUnlock, bodyLock, bodyToggleLock, useMediaQuery, BurgerMenu
-} from './shared';
+} from './shared'

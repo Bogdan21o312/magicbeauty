@@ -1,2 +1,2 @@
-export { TypeIbg } from './TypeIbg';
+export { TypeIbg } from './TypeIbg'
 export {TypeDeviceType} from "./TypeDeviceType"

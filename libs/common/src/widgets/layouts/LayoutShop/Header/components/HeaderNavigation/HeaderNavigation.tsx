@@ -1,8 +1,8 @@
 'use client'
-import {links} from "./links";
-import classes from "./HeaderNavigation.module.scss";
-import Link from "next/link";
-import {HeaderNavigationProps} from "./HeaderNavigationProps";
+import {links} from "./links"
+import classes from "./HeaderNavigation.module.scss"
+import Link from "next/link"
+import {HeaderNavigationProps} from "./HeaderNavigationProps"
 
 export function HeaderNavigation({touchScreenOrMediaQuery, isToggleBurgerMenu, scrollHeader}: HeaderNavigationProps) {
     const classesMain = `${classes.main} ${touchScreenOrMediaQuery ? classes.touchScreenOrMediaQuery : ''} ${isToggleBurgerMenu ? classes.open : ''} ${scrollHeader ? classes.scroll : ''}`

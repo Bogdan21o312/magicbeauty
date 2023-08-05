@@ -1,4 +1,4 @@
-import {uploadImage} from "./uploadImage";
+import {uploadImage} from "./uploadImage"
 
 export function Create() {
 

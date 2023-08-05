@@ -1,11 +1,11 @@
 // UI
-export {Ibg, Wrapper, Button, Text, Loader, BurgerMenu, LogoShop} from './UI';
+export {Ibg, Wrapper, Button, Text, Loader, BurgerMenu, LogoShop} from './UI'
 
 // Components
 export {ModalWindow, Container} from "./components"
 
 // Types
-export {TypeIbg, TypeDeviceType} from './types';
+export {TypeIbg, TypeDeviceType} from './types'
 
 // Icons
 export {IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop, IconBag} from "./assets"
@@ -19,7 +19,7 @@ export {
     SHOP_ABOUT_PAGE_URL,
     regexTabletType,
     regexMobileType
-} from './constants';
+} from './constants'
 
 // Lib
 export {useDeviceType, bodyLock, bodyToggleLock, bodyUnlock, useMediaQuery, useScrollLessThanY} from "./lib"

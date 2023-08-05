@@ -1,6 +1,6 @@
 import classes from "./Button.module.scss"
 import {ButtonProps} from "./ButtonProps"
-import {ButtonHTMLAttributes} from "react";
+import {ButtonHTMLAttributes} from "react"
 
 export function Button({variant, children, widthHundredPercent, border, ...otherProps}: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
 

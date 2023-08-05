@@ -1,3 +1,3 @@
 export function bodyUnlock() {
-    document.body.classList.remove('lock');
+    document.body.classList.remove('lock')
 }

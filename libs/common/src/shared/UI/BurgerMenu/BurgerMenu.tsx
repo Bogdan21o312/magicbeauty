@@ -1,6 +1,6 @@
 'use client'
 import classes from "./BurgerMenu.module.scss"
-import {BurgerMenuProps} from "./BurgerMenuProps";
+import {BurgerMenuProps} from "./BurgerMenuProps"
 
 export function BurgerMenu({isOpen, toggleOpen}: BurgerMenuProps) {
 

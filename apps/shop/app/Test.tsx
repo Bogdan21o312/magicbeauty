@@ -1,19 +1,19 @@
 'use client'
-import {useState} from "react";
-import {Button, ModalWindow} from "@magicbeauty/common";
+import {useState} from "react"
+import {Button, ModalWindow} from "@magicbeauty/common"
 
 export function Test() {
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false)
 
     // Функція, що показує модальне вікно
     const openModal = () => {
-        setIsModalVisible(true);
-    };
+        setIsModalVisible(true)
+    }
 
     // Функція, що закриває модальне вікно
     const closeModal = () => {
-        setIsModalVisible(false);
-    };
+        setIsModalVisible(false)
+    }
 
     return (
         <div>
@@ -28,5 +28,5 @@ export function Test() {
                 <button onClick={closeModal}>Закрити</button>
             </ModalWindow>
         </div>
-    );
+    )
 }

@@ -1,7 +1,7 @@
-'use client';
-import classes from './Container.module.scss';
-import {ContainerProps} from "./ContainerProps";
-import {Ibg} from '../../UI';
+'use client'
+import classes from './Container.module.scss'
+import {ContainerProps} from "./ContainerProps"
+import {Ibg} from '../../UI'
 
 export function Container({
                               children,
@@ -11,9 +11,9 @@ export function Container({
                               modClassImage,
                           }: ContainerProps) {
 
-    const allClasses = [classes.container];
+    const allClasses = [classes.container]
 
-    !nonRetreat && allClasses.push(classes.retreat);
+    !nonRetreat && allClasses.push(classes.retreat)
 
     return (
         <div className={allClasses.join(' ')}>
@@ -26,5 +26,5 @@ export function Container({
                 />
             ) : null}
         </div>
-    );
+    )
 }
