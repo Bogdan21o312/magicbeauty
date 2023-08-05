@@ -26,4 +26,8 @@ export const links = [
     text: 'Опт',
     link: SHOP_OPT_PAGE_URL,
   },
+  {
+    text: 'Auth',
+    link: '/auth',
+  },
 ]

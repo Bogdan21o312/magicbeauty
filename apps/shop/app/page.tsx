@@ -38,7 +38,6 @@ async function deleteImage(id: number) {
 
 export default async function Index() {
 
-  const users = await prisma.user.findMany()
   const images = await prisma.image.findMany()
 
   console.log(images)
