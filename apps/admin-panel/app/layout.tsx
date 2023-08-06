@@ -1,4 +1,6 @@
 import './global.css'
+import { ReactNode } from 'react'
+import { LayoutAdminPanel } from '@magicbeauty/common/server'
 
 export const metadata = {
   title: 'Welcome to admin-panel',
@@ -6,13 +8,17 @@ export const metadata = {
 }
 
 export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
+                                     children
+                                   }: {
+  children: ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang='en'>
+    <body>
+    <LayoutAdminPanel>
+      {children}
+    </LayoutAdminPanel>
+    </body>
     </html>
   )
 }
