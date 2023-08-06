@@ -1,8 +1,9 @@
-import {ReactNode} from "react";
+import { ReactNode } from 'react'
+import classes from './Main.module.scss'
 
-export function Main({children}: { children: ReactNode }) {
+export function Main({ children }: { children: ReactNode }) {
   return (
-    <main>
+    <main className={classes.main}>
       {children}
     </main>
   )

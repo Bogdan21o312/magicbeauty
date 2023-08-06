@@ -1,9 +1,9 @@
-import {prisma} from "@magicbeauty/common";
-import {revalidatePath} from "next/cache";
-import {z} from 'zod';
-import Image from "next/image";
-import {Create} from "./create";
-import {ImageItem} from "./ImageItem";
+import {prisma, ModuleBanner} from "@magicbeauty/common/server"
+import {revalidatePath} from "next/cache"
+import {z} from 'zod'
+import {Create} from "./create"
+import {ImageItem} from "./ImageItem"
+import {Test} from "./Test"
 
 const createUserSchema = z.object({
   email: z.string()
@@ -38,13 +38,14 @@ async function deleteImage(id: number) {
 
 export default async function Index() {
 
-  const users = await prisma.user.findMany()
   const images = await prisma.image.findMany()
 
   console.log(images)
 
   return (
     <div>
+      <ModuleBanner/>
+      <Test/>
       <form action={createUser}>
         <input placeholder='Email' name="email"/>
         <button>ADD</button>
@@ -56,5 +57,5 @@ export default async function Index() {
         </div>
       )}
     </div>
-  );
+  )
 }

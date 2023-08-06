@@ -1,8 +1,8 @@
-import {ReactNode} from 'react';
-import {Footer} from './Footer';
-import {Header} from './Header';
-import {Main} from './Main';
-import {Wrapper} from "../../../shared";
+import {ReactNode} from 'react'
+import {Footer} from './Footer'
+import {Header} from './Header'
+import {Main} from './Main'
+import {Wrapper} from "../../../shared"
 
 export function LayoutShop({children}: { children: ReactNode }) {
   return (
@@ -11,5 +11,5 @@ export function LayoutShop({children}: { children: ReactNode }) {
       <Main>{children}</Main>
       <Footer/>
     </Wrapper>
-  );
+  )
 }

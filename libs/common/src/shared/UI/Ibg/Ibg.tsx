@@ -1,4 +1,4 @@
-import classes from './Ibg.module.scss';
+import classes from './Ibg.module.scss'
 
 export function Ibg({
   src,
@@ -14,5 +14,5 @@ export function Ibg({
     <div className={`${classes.clIbg} ${modClass}`}>
       <img src={src!} alt={alt!} {...otherProps} />
     </div>
-  );
+  )
 }

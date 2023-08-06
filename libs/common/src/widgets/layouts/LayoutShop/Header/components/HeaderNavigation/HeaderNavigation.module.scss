@@ -1,0 +1,105 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.touchScreenOrMediaQuery {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+    background-color: $ColorWhite;
+    gap: rem(30);
+    padding: rem(120) rem(15) rem(30) rem(15);
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: -100%;
+      transition: all 0.3s ease 0s;
+      width: 100%;
+      height: rem(70);
+      background-color: $ColorMain;
+      z-index: 2;
+      @media (max-width: em(600)) {
+        height: rem(60);
+      }
+    }
+
+    &.scroll {
+      &::before {
+        height: rem(50);
+      }
+    }
+
+    &.open {
+      left: 0;
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    .list {
+      flex-direction: column;
+    }
+
+    .link {
+      text-transform: uppercase;
+      display: block;
+      padding: rem(20) rem(16);
+      font-size: rem(40);
+      color: $ColorMain;
+    }
+  }
+}
+
+.menu {
+
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item {
+
+}
+
+.link {
+  position: relative;
+  color: $ColorWhite;
+  padding: rem(10) rem(16);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $ColorWhite;
+    transition: width .3s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

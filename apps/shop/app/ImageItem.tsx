@@ -1,10 +1,8 @@
 'use client'
 
-import Image from "next/image";
+import Image from "next/image"
 
 export function ImageItem({id, path, remove}: { id: number, path: string, remove: (id: number) => Promise<void>; }) {
-    console.log(id)
-    console.log(path)
     return (
         <div>
             <div>{id}</div>
