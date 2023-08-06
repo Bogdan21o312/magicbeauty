@@ -2,4 +2,4 @@
 export {prisma} from "./actions"
 
 // Widgets
-export {LayoutShop} from "./widgets"
+export {LayoutShop, ModuleBanner} from "./widgets"

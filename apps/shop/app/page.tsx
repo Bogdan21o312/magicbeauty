@@ -1,4 +1,4 @@
-import {prisma} from "@magicbeauty/common/server"
+import {prisma, ModuleBanner} from "@magicbeauty/common/server"
 import {revalidatePath} from "next/cache"
 import {z} from 'zod'
 import {Create} from "./create"
@@ -44,6 +44,7 @@ export default async function Index() {
 
   return (
     <div>
+      <ModuleBanner/>
       <Test/>
       <form action={createUser}>
         <input placeholder='Email' name="email"/>

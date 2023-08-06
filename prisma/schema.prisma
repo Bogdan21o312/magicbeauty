@@ -24,3 +24,12 @@ model Image {
   id   Int    @id @default(autoincrement())
   path String
 }
+
+model Banner {
+  id        Int      @id @default(autoincrement())
+  image     String
+  text      String
+  title     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
