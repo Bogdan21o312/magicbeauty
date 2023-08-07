@@ -1,14 +1,28 @@
 'use client'
 import { Button, Input, Text, useInput } from '../../../shared'
 import classes from './FeatureRegister.module.scss'
+import { useEffect, useState } from 'react'
 
 export function FeatureRegister() {
   const emailInput = useInput('', { isEmpty: true, isEmail: true })
   const passwordInput = useInput('', { isEmpty: true, password: true })
+  const passwordConfirmationInput = useInput('', { isEmpty: true, password: true })
   const phoneInput = useInput('', { isEmpty: true, phone: true })
   const firstNameInput = useInput('', { isEmpty: true })
   const surnameInput = useInput('', { isEmpty: true })
   const patronymicInput = useInput('', { isEmpty: true })
+  const [isPasswordConfirmationText, setPasswordConfirmationText] = useState('')
+  const [isPasswordConfirmation, setPasswordConfirmation] = useState(false)
+
+  useEffect(() => {
+    if (passwordInput.value === passwordConfirmationInput.value) {
+      setPasswordConfirmation(true)
+      setPasswordConfirmationText('')
+    } else {
+      setPasswordConfirmation(false)
+      setPasswordConfirmationText('Pas')
+    }
+  }, [passwordConfirmationInput.value, passwordInput.value, isPasswordConfirmation])
 
   const isFormValid =
     !passwordInput.formValid ||
@@ -16,7 +30,8 @@ export function FeatureRegister() {
     !phoneInput.formValid ||
     !firstNameInput.formValid ||
     !surnameInput.formValid ||
-    !patronymicInput.formValid
+    !patronymicInput.formValid ||
+    !isPasswordConfirmation
 
   return (
     <form className={classes.form}>
@@ -53,6 +68,7 @@ export function FeatureRegister() {
       />
       <Input
         placeholder='Номер телефону' name='phone'
+        type='tel'
         onChange={e => phoneInput.onChange(e)}
         onBlur={e => phoneInput.onBlur(e)}
         value={phoneInput.value}
@@ -82,6 +98,17 @@ export function FeatureRegister() {
         isDirty={passwordInput.isDirty}
         isEmptyText={passwordInput.isEmptyText}
         isErrorText={passwordInput.passwordTextError}
+        hide
+      />
+      <Input
+        placeholder='Перевірити пароль'
+        onChange={e => passwordConfirmationInput.onChange(e)}
+        onBlur={e => passwordConfirmationInput.onBlur(e)}
+        value={passwordConfirmationInput.value}
+        error
+        isDirty={passwordConfirmationInput.isDirty}
+        isEmptyText={passwordConfirmationInput.isEmptyText}
+        isErrorText={isPasswordConfirmationText}
         hide
       />
       <Button border widthHundredPercent disabled={isFormValid}>Зереєструватись</Button>
