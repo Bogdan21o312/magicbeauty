@@ -7,16 +7,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// User ====================================================================================================
+
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  password String
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  password   String
+  phone      String   @unique
+  firstName  String
+  surname    String
+  patronymic String
+  country    String?
+  region     String?
+  settlement String?
+  avatar     String
+  role       Role     @default(USER)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
+
+enum Role {
+  USER
+  ADMIN
+}
+
+// Post ====================================================================================================
 
 model Post {
   id        Int      @id @default(autoincrement())
-  path      String
-  email     String   @unique
+  image     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -28,9 +47,9 @@ model Image {
 
 model Banner {
   id        Int      @id @default(autoincrement())
-  image     String
-  text      String
   title     String
+  text      String
+  image     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
