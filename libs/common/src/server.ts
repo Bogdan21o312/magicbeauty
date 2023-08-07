@@ -1,5 +1,5 @@
 // Actions
-export { prisma, createUser, uploadImageToCloudinary, cloudinarya, deleteUser } from './actions'
+export { prisma, createUser, uploadImageToCloudinary, cloudinarya, deleteUser, getUserByEmail, getAllUsers } from './actions'
 
 // Widgets
 export { LayoutShop, ModuleBanner, LayoutAdminPanel, ModuleAuth } from './widgets'

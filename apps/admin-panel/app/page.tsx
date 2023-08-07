@@ -1,5 +1,5 @@
-import { FeatureFormLogin, FeatureFormRegister } from '@magicbeauty/common'
-import { createUser, prisma } from '@magicbeauty/common/server'
+import { FeatureFormRegister } from '@magicbeauty/common'
+import { prisma } from '@magicbeauty/common/server'
 
 
 export default async function Page() {
@@ -7,7 +7,7 @@ export default async function Page() {
   console.log(users)
   return (
     <div>
-     <FeatureFormLogin/>
+     <FeatureFormRegister/>
     </div>
   )
 }
