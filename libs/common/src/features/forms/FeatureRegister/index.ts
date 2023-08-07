@@ -1,1 +1,0 @@
-export {FeatureRegister} from "./FeatureRegister"

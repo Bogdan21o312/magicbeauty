@@ -1,5 +1,5 @@
 import { createUser, deleteUser, prisma } from '@magicbeauty/common/server'
-import { FeatureRegister } from '@magicbeauty/common'
+import { FeatureFormRegister } from '@magicbeauty/common'
 
 async function cU(data: FormData) {
   'use server'
@@ -14,7 +14,7 @@ export default async function Page() {
   const users = await prisma.user.findMany()
   return (
     <div>
-      <FeatureRegister/>
+      <FeatureFormRegister/>
       <form action={cU}>
         <input type='text' name='email' />
         <input type='text' name='password' />

@@ -27,11 +27,11 @@ export function Input({
 
 
   return (
-    <div className={`${classes.inputWrapper} ${emptyErrorAndErrorText && classes.errorValid}`}>
+    <div className={`${classes.inputWrapper} ${emptyErrorAndErrorText ? classes.errorValid : ''}'`}>
       <input type={typeInput} className={classes.formControl} placeholder={placeholder} {...otherProps} />
       <label className={classes.controlLabel}>{placeholder}</label>
       {hide && <button
-        className={`${classes.showPassword} ${isShowPassword && classes.show}`}
+        className={`${classes.showPassword} ${isShowPassword ? classes.show : ''}`}
         onClick={toggleShowPassword}
       >
         {isShowPassword ?

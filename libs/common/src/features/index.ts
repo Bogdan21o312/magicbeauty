@@ -1,1 +1,1 @@
-export {FeatureRegister} from "./forms"
+export {FeatureFormRegister} from "./forms"
