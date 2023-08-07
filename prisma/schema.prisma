@@ -20,7 +20,7 @@ model User {
   country    String?
   region     String?
   settlement String?
-  avatar     String
+  avatar     String?
   role       Role     @default(USER)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt

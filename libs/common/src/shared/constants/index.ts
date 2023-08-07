@@ -4,4 +4,4 @@ export {
 } from './shop-pages-paths'
 
 // Regex
-export {regexMobileType, regexTabletType} from "./regex"
+export {regexMobileType, regexTabletType, emailRegex, digitRegex, symbolRegex, uppercaseRegex, minLengthRegex, lowercaseRegex, phoneRegex} from "./regex"

@@ -1,0 +1,76 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+
+  margin: rem(30) auto;
+
+  &.errorValid {
+    .formControl {
+      border: rem(2) solid $ColorRed;
+      outline: $ColorRed;
+    }
+
+    .controlLabel {
+      border: rem(2) solid $ColorRed;
+      color: $ColorRed;
+      background-color: $ColorWhite;
+    }
+  }
+}
+
+.formControl {
+  display: block;
+  line-height: 2em;
+  margin: 0;
+  width: 100%;
+  font-size: medium;
+  border: rem(2) solid $ColorMain;
+  background-color: $ColorWhite;
+  border-radius: rem(36);
+  font-weight: 500;
+  padding: rem(8) rem(18);
+}
+
+.controlLabel {
+  background-color: $ColorMain;
+  border: rem(1) solid $ColorWhite;
+  display: block;
+  position: absolute;
+  opacity: 0;
+  bottom: 1.9rem;
+  border-radius: rem(36);
+  color: $ColorWhite;
+  transition: 0.2s ease-in-out transform;
+  font-size: 12px;
+  padding: rem(8) rem(18);
+}
+
+.formControl:placeholder-shown + .controlLabel {
+  visibility: hidden;
+  z-index: -1;
+  transition: 0.4s ease-in-out;
+}
+
+.formControl:not(:placeholder-shown) + .controlLabel,
+.formControl:focus:not(:placeholder-shown) + .controlLabel {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(-7px);
+  transition: 0.4s ease-in-out transform;
+}
+
+.errors {
+  position: absolute;
+  right: 0;
+  bottom: rem(-18);
+  text-align: right;
+}
+
+.error {
+  display: flex;
+  color: $ColorRed;
+  font-size: rem(12);
+}
