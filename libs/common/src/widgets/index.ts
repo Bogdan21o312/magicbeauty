@@ -1,2 +1,2 @@
 export { LayoutShop, LayoutAdminPanel } from './layouts'
-export {ModuleBanner} from "./modules"
+export {ModuleBanner, ModuleAuth} from "./modules"
