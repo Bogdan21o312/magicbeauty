@@ -11,7 +11,6 @@ export function Ant() {
 
   const onPhonePaste = (e) => {
     e.preventDefault()
-    const input = e.target
     const inputNumbersValue = getInputNumbersValue(e.clipboardData.getData('Text'))
 
     if (inputNumbersValue) {
@@ -47,18 +46,14 @@ export function Ant() {
   const onPhoneInput = (e) => {
     const input = e.target
     const selectionStart = input.selectionStart
-
+    const inputNumbersValue = getInputNumbersValue(input.value)
+    console.log(e)
     if (input.value.length !== selectionStart) {
-      const inputNumbersValue = getInputNumbersValue(input.value)
-      setPhone(inputNumbersValue)
-
-      input.setSelectionRange(selectionStart, selectionStart)
+      setPhone(input.value)
       return
     }
-
-    const inputNumbersValue = getInputNumbersValue(input.value)
     const formattedPhoneNumber = formatPhoneNumber(inputNumbersValue)
-
+    console.log(formattedPhoneNumber)
     setPhone(formattedPhoneNumber)
   }
 
