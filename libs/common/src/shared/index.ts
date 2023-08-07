@@ -8,7 +8,7 @@ export { ModalWindow, Container } from './components'
 export { TypeIbg, TypeDeviceType, IValidations } from './types'
 
 // Icons
-export { IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop, IconBag } from './assets'
+export { IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop, IconBag, IconShowPassword, IconHidePassword } from './assets'
 
 // Constants
 export {

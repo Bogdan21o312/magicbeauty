@@ -82,6 +82,7 @@ export function FeatureRegister() {
         isDirty={passwordInput.isDirty}
         isEmptyText={passwordInput.isEmptyText}
         isErrorText={passwordInput.passwordTextError}
+        hide
       />
       <Button border widthHundredPercent disabled={isFormValid}>Зереєструватись</Button>
     </form>

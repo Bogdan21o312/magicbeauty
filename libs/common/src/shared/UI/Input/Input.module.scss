@@ -17,6 +17,12 @@
       color: $ColorRed;
       background-color: $ColorWhite;
     }
+    .showPassword {
+      path,
+      svg {
+        fill: $ColorRed !important;
+      }
+    }
   }
 }
 
@@ -73,4 +79,21 @@
   display: flex;
   color: $ColorRed;
   font-size: rem(12);
+}
+
+.showPassword {
+  outline: none;
+  position: absolute;
+  z-index: 1;
+  right: rem(15);
+  top: 60%;
+  transform: translateY(-57%);
+  path,
+  svg {
+    fill: $ColorMain !important;
+  }
+  &.show {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

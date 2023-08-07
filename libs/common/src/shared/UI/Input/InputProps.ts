@@ -10,4 +10,5 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     isInputtingText?: boolean
     isEmptyText?: string
     isErrorText?: string
+    hide?: boolean
 }

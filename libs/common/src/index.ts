@@ -48,5 +48,5 @@ export {
   TypeDeviceType,
   useDeviceType,
   useScrollLessThanY,
-  generateRandomNumber, phoneRegex
+  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword
 } from './shared'
