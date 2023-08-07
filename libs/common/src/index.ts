@@ -3,7 +3,7 @@ export {} from './entites'
 
 // Features
 
-export { FeatureFormRegister } from './features'
+export { FeatureFormRegister, FeatureFormLogin } from './features'
 
 // Shared
 export {

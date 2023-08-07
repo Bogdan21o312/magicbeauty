@@ -27,8 +27,8 @@ export const authConfig: AuthOptions = {
     })
   ],
   pages: {
-    signIn: '/auth',
-    newUser: '/auth',
-    error: '/auth'
+    signIn: '/',
+    newUser: '/',
+    error: '/'
   }
 }
