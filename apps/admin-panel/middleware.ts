@@ -1,2 +1,6 @@
 export { default } from 'next-auth/middleware'
-export const config = { matcher: ['/admin-panel/:path*'] }
+export const config = {
+  matcher: [
+    '/((?!auth).*)(.+)'
+  ]
+}

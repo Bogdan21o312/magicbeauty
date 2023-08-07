@@ -1,6 +1,10 @@
 // Entites
 export {} from './entites'
 
+// Providers
+
+export { AuthProvider } from './providers'
+
 // Features
 
 export { FeatureFormRegister, FeatureFormLogin } from './features'

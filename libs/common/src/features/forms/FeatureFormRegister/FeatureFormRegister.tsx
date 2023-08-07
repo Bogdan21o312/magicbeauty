@@ -3,7 +3,7 @@ import { Button, Input, Text } from '../../../shared'
 import classes from './FeatureFormRegister.module.scss'
 import { useFeatureFormRegister } from './lib'
 
-export function FeatureFormRegister() {
+export function FeatureFormRegister({createUser}:any) {
 
   const {
     isFormValid,
@@ -18,7 +18,7 @@ export function FeatureFormRegister() {
   } = useFeatureFormRegister()
 
   return (
-    <form className={classes.form}>
+    <form action={createUser} className={classes.form}>
       <Text type={'titleBig'}>Title</Text>
       <Input
         placeholder="І'мя"

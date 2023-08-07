@@ -30,7 +30,7 @@ export function FeatureFormLogin() {
         isErrorText={passwordInput.passwordTextError}
         hide
       />
-      <Button border widthHundredPercent disabled={isFormValid}>Зереєструватись</Button>
+      <Button border widthHundredPercent disabled={!isFormValid}>Зереєструватись</Button>
     </form>
   )
 }

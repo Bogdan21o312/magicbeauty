@@ -1,6 +1,7 @@
 import { prisma, uploadImageToCloudinary } from '../lib'
 
 export async function createUser(data: FormData) {
+  "use server"
   const avatar = data.get('avatar') as File
   const email = data.get('email') as string
   const password = data.get('password') as string
