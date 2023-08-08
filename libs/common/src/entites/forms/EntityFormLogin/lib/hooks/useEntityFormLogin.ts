@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import { FormEventHandler } from 'react'
 
-export function useFeatureFormLogin() {
+export function useEntityFormLogin() {
   const router = useRouter()
   const emailInput = useInput('', { isEmpty: true, isEmail: true })
   const passwordInput = useInput('', { isEmpty: true, password: true })

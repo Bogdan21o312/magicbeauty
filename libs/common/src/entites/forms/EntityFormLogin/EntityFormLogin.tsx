@@ -1,12 +1,12 @@
 'use client'
-import { useFeatureFormLogin } from './lib'
-import { Button, Input, Text } from '../../../shared'
-import classes from "./FeatureFormLogin.module.scss"
-export function FeatureFormLogin() {
-  const {isFormValid, passwordInput, emailInput, handleSubmit} = useFeatureFormLogin()
+import { useEntityFormLogin } from './lib'
+import { Button, Input } from '../../../shared'
+import classes from './EntityFormLogin.module.scss'
+
+export function EntityFormLogin() {
+  const { isFormValid, passwordInput, emailInput, handleSubmit } = useEntityFormLogin()
   return (
     <form className={classes.form} onSubmit={handleSubmit}>
-      <Text type={'titleBig'}>Title</Text>
       <Input
         placeholder='Електрона пошта'
         name='email'

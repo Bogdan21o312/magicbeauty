@@ -1,9 +1,9 @@
 'use client'
-import { Button, Input, Text } from '../../../shared'
-import classes from './FeatureFormRegister.module.scss'
-import { useFeatureFormRegister } from './lib'
+import { Button, Input } from '../../../shared'
+import classes from './EntityFormRegister.module.scss'
+import { useEntityFormRegister } from './lib'
 
-export function FeatureFormRegister() {
+export function EntityFormRegisterContent() {
 
   const {
     isFormValid,
@@ -15,11 +15,10 @@ export function FeatureFormRegister() {
     surnameInput,
     phoneInput,
     emailInput
-  } = useFeatureFormRegister()
+  } = useEntityFormRegister()
 
   return (
     <form className={classes.form}>
-      <Text type={'titleBig'}>Title</Text>
       <Input
         placeholder="І'мя"
         name='firstName'

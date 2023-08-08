@@ -6,8 +6,7 @@ export {} from './entites'
 export { AuthProvider } from './providers'
 
 // Features
-
-export { FeatureFormRegister, FeatureFormLogin } from './features'
+export {} from "./features"
 
 // Shared
 export {

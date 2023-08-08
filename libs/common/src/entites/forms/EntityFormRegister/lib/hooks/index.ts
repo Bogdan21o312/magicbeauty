@@ -1,0 +1,1 @@
+export {useEntityFormRegister} from "./useEntityFormRegister"

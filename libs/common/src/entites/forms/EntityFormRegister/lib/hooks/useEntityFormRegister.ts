@@ -2,7 +2,7 @@
 import { useInput } from '../../../../../shared'
 import { useEffect, useState } from 'react'
 
-export function useFeatureFormRegister() {
+export function useEntityFormRegister() {
   const emailInput = useInput('', { isEmpty: true, isEmail: true })
   const passwordInput = useInput('', { isEmpty: true, password: true })
   const passwordConfirmationInput = useInput('', { isEmpty: true, password: true })

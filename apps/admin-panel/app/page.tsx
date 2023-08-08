@@ -1,4 +1,3 @@
-import { FeatureFormRegister } from '@magicbeauty/common'
 import { prisma } from '@magicbeauty/common/server'
 
 
@@ -7,7 +6,6 @@ export default async function Page() {
   console.log(users)
   return (
     <div>
-     <FeatureFormRegister/>
     </div>
   )
 }
