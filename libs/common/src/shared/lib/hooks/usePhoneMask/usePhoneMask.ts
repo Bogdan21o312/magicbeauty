@@ -20,29 +20,23 @@ export function usePhoneMask() {
   const formatPhoneNumber = (inputNumbersValue: string): string => {
     let formattedValue = ''
 
-    if (['3', '7', '8', '9'].includes(inputNumbersValue[0])) {
-      // if (inputNumbersValue[0] === '9') inputNumbersValue = '7' + inputNumbersValue
-      // if (inputNumbersValue[0] === '8') inputNumbersValue = '3' + inputNumbersValue
-      formattedValue = '+3'
-      console.log(inputNumbersValue)
-      if (inputNumbersValue.length > 1) {
-        formattedValue += inputNumbersValue.substring(1, 2)
+    if (['3', '8', '0'].includes(inputNumbersValue[0])) {
+      if (inputNumbersValue[0] === '9') inputNumbersValue = '7' + inputNumbersValue
+      formattedValue = '+38(0'
+      if (inputNumbersValue.length >= 4) {
+        formattedValue += '' + inputNumbersValue.substring(3, 5)
       }
-      if (inputNumbersValue.length >= 2) {
-        formattedValue += '(' + inputNumbersValue.substring(2, 5)
-      }
-      if (inputNumbersValue.length >= 5) {
+      if (inputNumbersValue.length >= 6) {
         formattedValue += ') ' + inputNumbersValue.substring(5, 8)
       }
-      if (inputNumbersValue.length >= 8) {
+      if (inputNumbersValue.length >= 9) {
         formattedValue += ' ' + inputNumbersValue.substring(8, 10)
       }
-      if (inputNumbersValue.length >= 10) {
+      if (inputNumbersValue.length >= 11) {
         formattedValue += ' ' + inputNumbersValue.substring(10, 12)
       }
     } else {
       formattedValue = '+' + inputNumbersValue.substring(0, 16)
-      console.log(inputNumbersValue)
     }
 
     return formattedValue
@@ -63,7 +57,7 @@ export function usePhoneMask() {
   }
 
   const onPhoneKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
-    if (event.key === 'Backspace' && phone.length === 4) {
+    if (event.key === 'Backspace' && phone.length <= 5) {
       setPhone('')
     }
   }
