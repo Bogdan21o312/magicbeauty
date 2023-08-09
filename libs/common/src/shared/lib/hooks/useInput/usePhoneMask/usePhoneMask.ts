@@ -1,9 +1,8 @@
 'use client'
 import { useState, ClipboardEvent, ChangeEvent, KeyboardEvent } from 'react'
 
-export function usePhoneMask() {
-  const [phone, setPhone] = useState('+38(0')
-
+export function usePhoneMask(phoneValue: string, setPhoneValue: (v: string) => void) {
+  // const [phoneValue, setPhoneValue] = useState('+38(0')
   const getInputNumbersValue = (input: string): string => {
     return input.replace(/\D/g, '')
   }
@@ -13,7 +12,7 @@ export function usePhoneMask() {
     const inputNumbersValue = getInputNumbersValue(event.clipboardData.getData('Text'))
 
     if (inputNumbersValue) {
-      setPhone(formatPhoneNumber(inputNumbersValue))
+      setPhoneValue(formatPhoneNumber(inputNumbersValue))
     }
   }
 
@@ -48,19 +47,20 @@ export function usePhoneMask() {
     const inputNumbersValue = getInputNumbersValue(input.value)
 
     if (input.value.length !== selectionStart) {
-      setPhone(input.value)
+      setPhoneValue(input.value)
       return
     }
 
     const formattedPhoneNumber = formatPhoneNumber(inputNumbersValue)
-    setPhone(formattedPhoneNumber)
+    setPhoneValue(formattedPhoneNumber)
+    console.log(setPhoneValue(formattedPhoneNumber))
   }
 
   const onPhoneKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
-    if (event.key === 'Backspace' && phone.length <= 5) {
-      setPhone('')
+    if (event.key === 'Backspace' && phoneValue.length <= 5) {
+      setPhoneValue('')
     }
   }
 
-  return { phone, onPhoneInput, onPhonePaste, onPhoneKeyDown }
+  return { phoneValue, onPhoneInput, onPhonePaste, onPhoneKeyDown }
 }

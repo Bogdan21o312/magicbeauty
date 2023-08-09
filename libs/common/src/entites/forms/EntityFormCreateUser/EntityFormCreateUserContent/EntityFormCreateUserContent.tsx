@@ -4,9 +4,8 @@ import { Button, Input } from '../../../../shared'
 import { useEntityFormCreateUserContent } from '../lib'
 import { EntityFormCreateUserContentProps } from './EntityFormCreateUserContentProps'
 
-export function EntityFormCreateUserContent({createUser}: EntityFormCreateUserContentProps) {
+export function EntityFormCreateUserContent({ createUser }: EntityFormCreateUserContentProps) {
   const { firstNameInput, surnameInput, patronymicInput, passwordInput, phoneInput, emailInput, isFormValid } = useEntityFormCreateUserContent()
-
   return (
     <form action={createUser} className={classes.form}>
       <Input
@@ -50,6 +49,9 @@ export function EntityFormCreateUserContent({createUser}: EntityFormCreateUserCo
         isDirty={phoneInput.isDirty}
         isEmptyText={phoneInput.isEmptyText}
         isErrorText={phoneInput.phoneTextError}
+        onKeyDown={phoneInput.onPhoneKeyDown}
+        onInput={phoneInput.onPhoneInput}
+        onPaste={phoneInput.onPhonePaste}
       />
       <Input
         placeholder='Електрона пошта'
