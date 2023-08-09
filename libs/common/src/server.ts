@@ -14,4 +14,4 @@ export { FeatureTableUsers } from './features/server'
 export {EntityFormLogin, EntityFormRegister, EntityFormCreateUser} from "./entites/server"
 
 // Configs
-export { authConfig } from './config'
+export { authConfig } from './configs'

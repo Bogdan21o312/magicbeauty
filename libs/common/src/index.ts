@@ -6,7 +6,7 @@ export {} from './entites'
 export { AuthProvider } from './providers'
 
 // Features
-export {} from "./features"
+export {} from './features'
 
 // Shared
 export {
@@ -51,5 +51,5 @@ export {
   TypeDeviceType,
   useDeviceType,
   useScrollLessThanY,
-  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword
+  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask
 } from './shared'

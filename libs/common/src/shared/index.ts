@@ -8,7 +8,18 @@ export { ModalWindow, Container } from './components'
 export { TypeIbg, TypeDeviceType, IValidations } from './types'
 
 // Icons
-export { IconSearch, IconCart, IconPhone, IconBookmark, IconClose, IconPlus, IconLogoShop, IconBag, IconShowPassword, IconHidePassword } from './assets'
+export {
+  IconSearch,
+  IconCart,
+  IconPhone,
+  IconBookmark,
+  IconClose,
+  IconPlus,
+  IconLogoShop,
+  IconBag,
+  IconShowPassword,
+  IconHidePassword
+} from './assets'
 
 // Constants
 export {
@@ -28,4 +39,14 @@ export {
 } from './constants'
 
 // Lib
-export { useDeviceType, bodyLock, bodyToggleLock, bodyUnlock, useMediaQuery, useScrollLessThanY, useInput, generateRandomNumber} from './lib'
+export {
+  useDeviceType,
+  bodyLock,
+  bodyToggleLock,
+  bodyUnlock,
+  useMediaQuery,
+  useScrollLessThanY,
+  useInput,
+  generateRandomNumber,
+  usePhoneMask
+} from './lib'
