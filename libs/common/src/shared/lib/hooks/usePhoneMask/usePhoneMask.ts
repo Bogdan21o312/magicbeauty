@@ -2,7 +2,7 @@
 import { useState, ClipboardEvent, ChangeEvent, KeyboardEvent } from 'react'
 
 export function usePhoneMask() {
-  const [phone, setPhone] = useState('')
+  const [phone, setPhone] = useState('+38(0')
 
   const getInputNumbersValue = (input: string): string => {
     return input.replace(/\D/g, '')
