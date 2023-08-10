@@ -4,4 +4,4 @@ export const symbolRegex = /[\W_]/
 export const digitRegex = /\d/
 export const minLengthRegex = /^.{8,}$/
 export const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
-export const phoneRegex = /^\+380 \d{2} \d{2} \d{2} \d{3}$/
+export const phoneRegex = /^\+38\(0[0-9]{2}\) [0-9]{3} [0-9]{2} [0-9]{2}$/

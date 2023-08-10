@@ -5,7 +5,9 @@ import { useState, MouseEvent } from 'react'
 import { IconHidePassword, IconShowPassword } from '../../assets'
 
 export function Input({
-                        placeholder, type, isDirty,
+                        placeholder,
+                        type,
+                        isDirty,
                         error,
                         isEmptyText,
                         isErrorText, hide, ...otherProps
@@ -24,7 +26,6 @@ export function Input({
     event.preventDefault()
     setShowPassword(!isShowPassword)
   }
-
 
   return (
     <div className={`${classes.inputWrapper} ${emptyErrorAndErrorText ? classes.errorValid : ''}'`}>

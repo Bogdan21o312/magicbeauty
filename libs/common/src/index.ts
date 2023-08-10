@@ -51,5 +51,5 @@ export {
   TypeDeviceType,
   useDeviceType,
   useScrollLessThanY,
-  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask, InputWithPhoneMask
+  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask
 } from './shared'

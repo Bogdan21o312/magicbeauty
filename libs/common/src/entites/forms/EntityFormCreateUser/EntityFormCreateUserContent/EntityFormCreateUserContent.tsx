@@ -5,7 +5,15 @@ import { useEntityFormCreateUserContent } from '../lib'
 import { EntityFormCreateUserContentProps } from './EntityFormCreateUserContentProps'
 
 export function EntityFormCreateUserContent({ createUser }: EntityFormCreateUserContentProps) {
-  const { firstNameInput, surnameInput, patronymicInput, passwordInput, phoneInput, emailInput, isFormValid } = useEntityFormCreateUserContent()
+  const {
+    firstNameInput,
+    phoneInout,
+    surnameInput,
+    patronymicInput,
+    passwordInput,
+    emailInput,
+    isFormValid
+  } = useEntityFormCreateUserContent()
   return (
     <form action={createUser} className={classes.form}>
       <Input
@@ -42,16 +50,16 @@ export function EntityFormCreateUserContent({ createUser }: EntityFormCreateUser
         placeholder='Номер телефону'
         name='phone'
         type='tel'
-        onChange={e => phoneInput.onChange(e)}
-        onBlur={e => phoneInput.onBlur(e)}
-        value={phoneInput.value}
+        onChange={e => phoneInout.onChange(e)}
+        onBlur={e => phoneInout.onBlur(e)}
+        value={phoneInout.phoneValue}
         error
-        isDirty={phoneInput.isDirty}
-        isEmptyText={phoneInput.isEmptyText}
-        isErrorText={phoneInput.phoneTextError}
-        onKeyDown={phoneInput.onPhoneKeyDown}
-        onInput={phoneInput.onPhoneInput}
-        onPaste={phoneInput.onPhonePaste}
+        isDirty={phoneInout.isDirty}
+        isEmptyText={phoneInout.isEmptyText}
+        isErrorText={phoneInout.phoneTextError}
+        onInput={phoneInout.onPhoneInput}
+        onPaste={phoneInout.onPhonePaste}
+        onKeyDown={phoneInout.onPhoneKeyDown}
       />
       <Input
         placeholder='Електрона пошта'
