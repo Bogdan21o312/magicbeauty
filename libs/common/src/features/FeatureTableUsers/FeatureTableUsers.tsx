@@ -1,7 +1,19 @@
+import classes from './FeatureTableUsers.module.scss'
 import { deleteUser, prisma } from '../../actions'
 import { TableUser } from './components'
-import { revalidatePath } from 'next/cache'
 
+async function getData() {
+  const res = await fetch('https://api.example.com/...')
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
 async function deleteUserAction(id: number) {
   'use server'
   deleteUser(id)
@@ -9,14 +21,20 @@ async function deleteUserAction(id: number) {
 }
 
 export async function FeatureTableUsers() {
-  const users = await prisma.user.findMany()
-  console.log(users)
-  if (users.length === 0) {
-    return <div>No users available</div>
-  }
+  let searchTerm = '' // Початкове значення для пошукового терміну
+  let usersArray = [] // Початкове порожній список користувачів
+  const users = await prisma.user.findMany({
+    where: {
+      firstName: {
+        contains: searchTerm,
+        mode: 'insensitive'
+      }
+    }
+  })
+
   return (
     <div>
-      <table>
+      <table className={classes.table}>
         <tbody>
         {users.map((user, index) =>
           <TableUser

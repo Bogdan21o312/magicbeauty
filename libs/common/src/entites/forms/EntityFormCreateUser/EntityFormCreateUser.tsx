@@ -5,7 +5,6 @@ import { revalidatePath } from 'next/cache'
 async function createUserAction(data: FormData) {
   'use server'
   createUser(data)
-
   revalidatePath('/users')
 }
 
