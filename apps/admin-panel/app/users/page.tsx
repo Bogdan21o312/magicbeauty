@@ -6,7 +6,6 @@ export default async function Page() {
 
   return (
     <div>
-      <EntityFormCreateUser/>
       <FeatureTableUsers/>
     </div>
   )

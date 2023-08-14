@@ -15,12 +15,18 @@ async function search(data: FormData) {
   revalidatePath('/users')
 }
 
-async function getAllUsersBySearch() {
+async function getAllUsersBySearch(page: number, pageSize: number) {
   'use server'
   const cookieStore = cookies()
+  cookieStore.set('paggination', 'paggination' as string)
+  cookieStore.set('paggination', 'some')
+  const pagginationGet = cookieStore.get('paggination')?.value
+  console.log(pagginationGet)
+
   const name = cookieStore.get('name')?.value
-  console.log(name)
-  const users = await prisma.user.findMany({
+  const skip = (page - 1) * pageSize
+
+  const totalUsers = await prisma.user.count({
     where: {
       firstName: {
         contains: name,
@@ -28,12 +34,36 @@ async function getAllUsersBySearch() {
       }
     }
   })
-  return users
+
+  const users = await prisma.user.findMany({
+    where: {
+      firstName: {
+        contains: name,
+        mode: 'insensitive'
+      }
+    },
+    skip: skip,
+    take: pageSize,
+  })
+
+  return { users, totalUsers }
 }
 
 export async function FeatureTableUsers() {
-  const users = await getAllUsersBySearch()
-
+  const pageSize = 5
+  const { users, totalUsers } = await getAllUsersBySearch(1, pageSize)
+  const totalPages = Math.ceil(totalUsers / pageSize)
+  console.log(totalPages)
+  const paginationButtons = []
+  for (let page = 1; page <= totalPages; page++) {
+    paginationButtons.push(
+      <div
+        key={page}
+      >
+        {page}
+      </div>
+    )
+  }
   return (
     <div>
       <form action={search}>
@@ -64,6 +94,7 @@ export async function FeatureTableUsers() {
           )}
         </tbody>
       </table>
+      {paginationButtons}
     </div>
   )
 }
