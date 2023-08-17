@@ -2,7 +2,7 @@
 export { Ibg, Wrapper, Button, Text, Loader, BurgerMenu, LogoShop, Input, Table, TableRow, TableCell } from './UI'
 
 // Components
-export { ModalWindow, Container } from './components'
+export { ModalWindow, Container, Section } from './components'
 
 // Types
 export { TypeIbg, TypeDeviceType, IValidations } from './types'

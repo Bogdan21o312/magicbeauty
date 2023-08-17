@@ -1,12 +1,12 @@
 // Entites
-export {} from './entites'
+export { } from './entites'
 
 // Providers
 
 export { AuthProvider } from './providers'
 
 // Features
-export {} from './features'
+export { } from './features'
 
 // Shared
 export {
@@ -51,5 +51,5 @@ export {
   TypeDeviceType,
   useDeviceType,
   useScrollLessThanY,
-  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask, Table, TableRow, TableCell
+  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask, Table, TableRow, TableCell, Section
 } from './shared'

@@ -1,15 +1,18 @@
-import Image from 'next/image'
 import { prisma } from '../../../actions'
+import { Container, Section, Text } from '../../../shared'
+import classes from './ModuleBanner.module.scss'
 
 export async function ModuleBanner() {
   const banner = await prisma.banner.findFirst()
   console.log(banner)
   return banner && (
-    <div>
-      {banner.id}
-      {banner.title}
-      {banner.description}
-      <Image src={banner.src} alt={banner.alt} width={100} height={100} />
-    </div>
+    <Section>
+      <Container>
+        <div className={classes.content}>
+          <Text as='h1' center type='titleBig'>{banner.title}</Text>
+          <Text as='p' center type='text'>{banner.description}</Text>
+        </div>
+      </Container>
+    </Section>
   )
 }
