@@ -18,7 +18,7 @@ export {
   IconLogoShop,
   IconBag,
   IconShowPassword,
-  IconHidePassword
+  IconHidePassword, IconStar, IconCircle, IconDollar, IconStarFull, IconBagOFMoney, IconCircleFull
 } from './assets'
 
 // Constants
@@ -48,5 +48,5 @@ export {
   useScrollLessThanY,
   useInput,
   generateRandomNumber,
-  usePhoneMask
+  usePhoneMask, useParallaxMouseEffect
 } from './lib'

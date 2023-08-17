@@ -1,0 +1,42 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.icons {
+  pointer-events: none;
+}
+
+.icon {
+  position: absolute;
+  svg,
+  path {
+    fill: $ColorMain !important;
+  }
+  &_01 {
+    top: percent(675, 974);
+    left: rem(15);
+  }
+
+  &_02 {
+    top: percent(380, 974);
+    left: percent(237, 1620);
+  }
+
+  &_03 {
+    top: percent(757, 974);
+    left: percent(403, 1620);
+  }
+
+  &_04 {
+    top: percent(134, 974);
+    left: percent(1149, 1620);
+  }
+
+  &_05 {
+    top: percent(419, 974);
+    left: percent(1325, 1620);
+  }
+
+  &_06 {
+    top: percent(776, 974);
+    left: percent(1321, 1620);
+  }
+}
