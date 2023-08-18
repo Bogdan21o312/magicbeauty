@@ -62,6 +62,13 @@ model GelPolishes {
   brands GelPolishBrand[]
 }
 
+model GelPolishBrand {
+  id          Int         @id @default(autoincrement())
+  brand       String
+  gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
+  gelPolishId Int
+}
+
 model GelPolishSize {
   id          Int         @id @default(autoincrement())
   size        String
@@ -72,13 +79,6 @@ model GelPolishSize {
 model GelPolishPrice {
   id          Int         @id @default(autoincrement())
   price       Float
-  gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
-  gelPolishId Int
-}
-
-model GelPolishBrand {
-  id          Int         @id @default(autoincrement())
-  brand       String
   gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
   gelPolishId Int
 }
