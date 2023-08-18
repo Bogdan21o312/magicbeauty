@@ -9,6 +9,8 @@ async function createGelPolishes(data: FormData) {
 }
 
 export default async function Page() {
+  const a = await prisma.gelPolishes.findMany()
+  console.log(a)
 
   return (<div></div>)
 }

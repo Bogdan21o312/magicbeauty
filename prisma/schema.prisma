@@ -48,30 +48,39 @@ model Banner {
 // GelPolishes
 
 model GelPolishes {
-  id        Int                @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   title     String
   imageSrc  String
   imageAlt  String
-  discount  Boolean            @default(false)
-  publish   Boolean            @default(false)
-  createdAt DateTime           @default(now())
-  updatedAt DateTime           @updatedAt
-  prices    PriceGelPolishes[]
-  sizes     SizeGelPolishes[]
+  discount  Boolean  @default(false)
+  publish   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sizes  GelPolishSize[]
+  prices GelPolishPrice[]
+  brands GelPolishBrand[]
 }
 
-model SizeGelPolishes {
+model GelPolishSize {
   id          Int         @id @default(autoincrement())
   size        String
-  gelPolishId Int
   gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
+  gelPolishId Int
 }
 
-model PriceGelPolishes {
+model GelPolishPrice {
   id          Int         @id @default(autoincrement())
-  price       String
-  gelPolishId Int
+  price       Float
   gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
+  gelPolishId Int
+}
+
+model GelPolishBrand {
+  id          Int         @id @default(autoincrement())
+  brand       String
+  gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
+  gelPolishId Int
 }
 
 // Post ====================================================================================================
