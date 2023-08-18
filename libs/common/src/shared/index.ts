@@ -18,7 +18,7 @@ export {
   IconLogoShop,
   IconBag,
   IconShowPassword,
-  IconHidePassword, IconStar, IconCircle, IconDollar, IconStarFull, IconBagOFMoney, IconCircleFull
+  IconHidePassword, IconStar, IconCircle, IconDollar, IconStarFull, IconBagOFMoney, IconCircleFull, IconLove
 } from './assets'
 
 // Constants

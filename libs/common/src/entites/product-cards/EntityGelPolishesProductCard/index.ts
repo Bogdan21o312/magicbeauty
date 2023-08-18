@@ -1,0 +1,1 @@
+export { EntityGelPolishesProductCard } from './EntityGelPolishesProductCard'

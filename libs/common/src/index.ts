@@ -1,5 +1,5 @@
 // Entites
-export { } from './entites'
+export { EntityGelPolishesProductCard } from './entites'
 
 // Providers
 
@@ -51,5 +51,5 @@ export {
   TypeDeviceType,
   useDeviceType,
   useScrollLessThanY,
-  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask, Table, TableRow, TableCell, Section, IconCircleFull, IconBagOFMoney, IconStarFull, IconDollar, IconCircle, IconStar, useParallaxMouseEffect
+  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask, Table, TableRow, TableCell, Section, IconCircleFull, IconBagOFMoney, IconStarFull, IconDollar, IconCircle, IconStar, useParallaxMouseEffect, IconLove
 } from './shared'
