@@ -1,0 +1,8 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.form {
+  max-width: rem(600);
+  border-radius: rem(24);
+  border: rem(4) solid $ColorMain;
+  padding: rem(20);
+}

@@ -1,1 +1,1 @@
-export { LayoutShop } from './LayoutShop';
+export { LayoutShop } from './LayoutShop'

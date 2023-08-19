@@ -1,0 +1,1 @@
+export {EntityFormRegister} from "./EntityFormRegister"

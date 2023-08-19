@@ -1,0 +1,37 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.main {
+  position: relative;
+  width: 100%;
+  margin: rem(30) auto;
+  span {
+    background-color: $ColorMain;
+    border: rem(1) solid $ColorWhite;
+    display: block;
+    position: absolute;
+    opacity: 1;
+    bottom: 1.9rem;
+    border-radius: rem(36);
+    color: $ColorWhite;
+    transition: 0.2s ease-in-out transform;
+    font-size: 12px;
+    padding: rem(8) rem(18);
+    transform: translateY(-7px);
+  }
+}
+
+.select {
+  max-height: rem(52);
+  height: 100%;
+  font-weight: 500;
+  display: block;
+  line-height: 2em;
+  margin: 0;
+  width: 100%;
+  font-size: rem(16);
+  border: rem(2) solid $ColorMain;
+  background-color: $ColorWhite;
+  border-radius: rem(36);
+  font-weight: 500;
+  padding: rem(8) rem(18);
+}

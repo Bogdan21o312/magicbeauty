@@ -1,6 +1,6 @@
 'use client'
-import {HeaderActionsProps} from "./HeaderActionsProps";
-import {BurgerMenu, IconBookmark, IconCart, IconPhone, IconSearch} from "../../../../../../shared";
+import {HeaderActionsProps} from "./HeaderActionsProps"
+import {BurgerMenu, IconBookmark, IconCart, IconPhone, IconSearch} from "../../../../../../shared"
 import classes from "./HeaderActions.module.scss"
 
 export function HeaderActions({isToggleBurgerMenu, toggleBurgerMenu, touchScreenOrMediaQuery, scrollHeader}: HeaderActionsProps) {

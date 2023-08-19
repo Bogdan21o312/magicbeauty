@@ -1,1 +1,1 @@
-export { Ibg } from './Ibg';
+export { Ibg } from './Ibg'

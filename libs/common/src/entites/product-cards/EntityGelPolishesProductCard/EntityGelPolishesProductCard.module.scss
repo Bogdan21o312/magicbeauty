@@ -1,0 +1,76 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.main {
+  background-color: $ColorWhite;
+  box-shadow: 0 rem(4) rem(20) rgba(0, 0, 0, 0.1);
+  padding: rem(30) rem(10);
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 rem(4) rem(20) rgba(255, 0, 144, 0.4);
+    }
+  }
+}
+
+.clImage {
+  padding-bottom: percent(300, 225);
+}
+
+.mainImage {
+  position: relative;
+}
+
+.blockText {
+  margin-top: rem(20);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: rem(5);
+}
+
+.numberReviews {
+  position: static;
+}
+
+.clPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: rem(25);
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: rem(10);
+  }
+}
+
+.priceNum {
+  position: static;
+}
+
+.priceLove {
+  path {
+    transition: all 0.3s ease 0s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      path {
+        fill: $ColorMain;
+      }
+    }
+  }
+}
+
+.mainLine {
+  border: rem(1) solid $ColorMain;
+  margin-top: rem(20);
+  margin-bottom: rem(20);
+  opacity: 0.6;
+}

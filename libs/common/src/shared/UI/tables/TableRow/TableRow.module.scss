@@ -1,0 +1,13 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.tr {
+  transition: opacity 0.3s ease 0s;
+  &:nth-child(odd) {
+    background-color: $ColorGreyLight;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

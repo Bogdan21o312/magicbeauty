@@ -1,7 +1,7 @@
 'use client'
 import classes from "./LogoShop.module.scss"
-import {IconBag} from "../../assets";
-import {LogoShopProps} from "./LogoShopProps";
+import {IconBag} from "../../assets"
+import {LogoShopProps} from "./LogoShopProps"
 
 export function LogoShop({dark, text = true, small, Icon = true}: LogoShopProps) {
 

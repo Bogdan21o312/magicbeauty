@@ -1,3 +1,3 @@
 export function bodyLock() {
-    document.body.classList.add('lock');
+    document.body.classList.add('lock')
 }
