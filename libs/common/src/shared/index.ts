@@ -18,16 +18,19 @@ export {
   IconLogoShop,
   IconBag,
   IconShowPassword,
-  IconHidePassword, IconStar, IconCircle, IconDollar, IconStarFull, IconBagOFMoney, IconCircleFull, IconLove, IconArrow
+  IconHidePassword,
+  IconStar,
+  IconCircle,
+  IconDollar,
+  IconStarFull,
+  IconBagOFMoney,
+  IconCircleFull,
+  IconLove,
+  IconArrow
 } from './assets'
 
 // Constants
 export {
-  SHOP_OPT_PAGE_URL,
-  SHOP_NEWS_PAGE_URL,
-  SHOP_HOME_PAGE_URL,
-  SHOP_CATEGORIES_PAGE_URL,
-  SHOP_ABOUT_PAGE_URL,
   regexTabletType,
   regexMobileType,
   emailRegex,
@@ -35,7 +38,13 @@ export {
   lowercaseRegex,
   digitRegex,
   uppercaseRegex,
-  minLengthRegex, phoneRegex
+  minLengthRegex,
+  phoneRegex,
+  ADMIN_PANEL_HOME_PAGE_URL,
+  ADMIN_PANEL_PRICE_AND_SIZE,
+  ADMIN_PANEL_BANNER_PAGE_URL,
+  ADMIN_PANEL_BRANDS_PAGE_URL,
+  ADMIN_PANEL_GEL_POLISHES_PAGE_URL
 } from './constants'
 
 // Lib
@@ -48,5 +57,6 @@ export {
   useScrollLessThanY,
   useInput,
   generateRandomNumber,
-  usePhoneMask, useParallaxMouseEffect
+  usePhoneMask,
+  useParallaxMouseEffect
 } from './lib'

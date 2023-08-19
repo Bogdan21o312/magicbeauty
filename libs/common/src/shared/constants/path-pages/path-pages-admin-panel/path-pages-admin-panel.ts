@@ -1,0 +1,5 @@
+export const ADMIN_PANEL_HOME_PAGE_URL = '/'
+export const ADMIN_PANEL_GEL_POLISHES_PAGE_URL = '/gel-polishes'
+export const ADMIN_PANEL_BRANDS_PAGE_URL = '/brands'
+export const ADMIN_PANEL_BANNER_PAGE_URL = '/banner'
+export const ADMIN_PANEL_PRICE_AND_SIZE = '/price-and-size'

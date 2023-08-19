@@ -1,5 +1,6 @@
 @import 'libs/common/src/shared/assets/styles/style';
 
 .main {
-  margin-top: rem(80);
+  display: grid;
+  grid-template-columns: rem(300) 1fr;
 }

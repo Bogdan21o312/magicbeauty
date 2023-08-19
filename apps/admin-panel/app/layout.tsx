@@ -19,7 +19,6 @@ export default function RootLayout({
       <body>
         <AuthProvider>
           <LayoutAdminPanel>
-            <Link href='/'>home</Link><Link href='/users'>users</Link><Link href='/gel-polishes'>gel</Link>
             {children}
           </LayoutAdminPanel>
         </AuthProvider>
