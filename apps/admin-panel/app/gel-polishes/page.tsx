@@ -12,7 +12,20 @@ async function createGelPolishes(data: FormData) {
     data: {
       title: title,
       imageAlt: imageAlt,
-      imageSrc: imageSrc
+      imageSrc: imageSrc,
+      GelPolishesWithBrandSizePrice: {
+        create: {
+          brand: {
+            connect: { id: 1 }
+          },
+          size: {
+            connect: { id: 1 }
+          },
+          price: {
+            connect: { id: 1 }
+          }
+        }
+      }
     }
   })
 
@@ -36,9 +49,44 @@ async function createBrand(data: FormData) {
   }
 }
 
+async function createSize(data: FormData) {
+  'use server'
+  const size = data.get('size') as string
+
+  const create = await prisma.size.create({
+    data: {
+      size: size,
+    }
+  })
+
+  if (create) {
+    revalidatePath('/gel-polishes')
+  }
+}
+
+async function createPrice(data: FormData) {
+  'use server'
+  const price = data.get('price') as string
+
+  const create = await prisma.price.create({
+    data: {
+      price: price
+    }
+  })
+
+  if (create) {
+    revalidatePath('/gel-polishes')
+  }
+}
 export default async function Page() {
   const brands = await prisma.brand.findMany()
   console.log(brands)
+  const gelPolishes = await prisma.gelPolishes.findMany({
+    include: {
+      GelPolishesWithBrandSizePrice: true
+    }
+  })
+  console.log(gelPolishes)
   return (
     <div>
       <form action={createGelPolishes}>
@@ -51,6 +99,16 @@ export default async function Page() {
       <form action={createBrand}>
         <h1>CREAT PRODUCT BRAND</h1>
         <Input name="brand" placeholder="Brand" />
+        <Button>Create</Button>
+      </form>
+      <form action={createSize}>
+        <h1>CREAT Size</h1>
+        <Input name="size" placeholder="Size" />
+        <Button>Create</Button>
+      </form>
+      <form action={createPrice}>
+        <h1>CREAT </h1>
+        <Input name="price" placeholder="Price" />
         <Button>Create</Button>
       </form>
     </div>

@@ -73,7 +73,7 @@ model Size {
 
 model Price {
   id                            Int                             @id @default(autoincrement())
-  price                         Float
+  price                         String
   GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
 }
 
