@@ -56,38 +56,35 @@ model GelPolishes {
   publish                       Boolean                         @default(false)
   createdAt                     DateTime                        @default(now())
   updatedAt                     DateTime                        @updatedAt
-  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
+  gelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
 }
 
 model Brand {
   id                            Int                             @id @default(autoincrement())
   brand                         String
-  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
+  createdAt                     DateTime                        @default(now())
+  updatedAt                     DateTime                        @updatedAt
+  gelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
 }
 
-model Size {
+model SizeAndPrice {
   id                            Int                             @id @default(autoincrement())
   size                          String
-  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
-}
-
-model Price {
-  id                            Int                             @id @default(autoincrement())
   price                         String
-  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
+  createdAt                     DateTime                        @default(now())
+  updatedAt                     DateTime                        @updatedAt
+  gelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
 }
 
 model GelPolishesWithBrandSizePrice {
-  gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
-  gelPolishId Int
-  brand       Brand       @relation(fields: [brandId], references: [id])
-  brandId     Int
-  size        Size        @relation(fields: [sizeId], references: [id])
-  sizeId      Int
-  price       Price       @relation(fields: [priceId], references: [id])
-  priceId     Int
+  gelPolish      GelPolishes  @relation(fields: [gelPolishId], references: [id])
+  gelPolishId    Int
+  brand          Brand        @relation(fields: [brandId], references: [id])
+  brandId        Int
+  sizeAndPrice   SizeAndPrice @relation(fields: [sizeAndPriceId], references: [id])
+  sizeAndPriceId Int
 
-  @@id([gelPolishId, brandId, sizeId, priceId])
+  @@id([gelPolishId, brandId, sizeAndPriceId])
 }
 
 // Post ====================================================================================================

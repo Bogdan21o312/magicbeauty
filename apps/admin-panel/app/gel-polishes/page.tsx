@@ -8,21 +8,20 @@ async function createGelPolishes(data: FormData) {
   const imageFile = data.get('file') as File
   const imageAlt = data.get('imageAlt') as string
   const imageSrc = await uploadImageToCloudinary(imageFile)
+  const brand = parseInt(data.get('brand') as string)
+  const sizeAndPrice = parseInt(data.get('sizeAndPrice') as string)
   const create = await prisma.gelPolishes.create({
     data: {
       title: title,
       imageAlt: imageAlt,
       imageSrc: imageSrc,
-      GelPolishesWithBrandSizePrice: {
+      gelPolishesWithBrandSizePrice: {
         create: {
           brand: {
-            connect: { id: 1 }
+            connect: { id: brand }
           },
-          size: {
-            connect: { id: 1 }
-          },
-          price: {
-            connect: { id: 1 }
+          sizeAndPrice: {
+            connect: { id: sizeAndPrice }
           }
         }
       }
@@ -52,24 +51,11 @@ async function createBrand(data: FormData) {
 async function createSize(data: FormData) {
   'use server'
   const size = data.get('size') as string
-
-  const create = await prisma.size.create({
-    data: {
-      size: size,
-    }
-  })
-
-  if (create) {
-    revalidatePath('/gel-polishes')
-  }
-}
-
-async function createPrice(data: FormData) {
-  'use server'
   const price = data.get('price') as string
 
-  const create = await prisma.price.create({
+  const create = await prisma.sizeAndPrice.create({
     data: {
+      size: size,
       price: price
     }
   })
@@ -78,12 +64,18 @@ async function createPrice(data: FormData) {
     revalidatePath('/gel-polishes')
   }
 }
+
 export default async function Page() {
   const brands = await prisma.brand.findMany()
-  console.log(brands)
+  const sizeAndPrice = await prisma.sizeAndPrice.findMany()
   const gelPolishes = await prisma.gelPolishes.findMany({
     include: {
-      GelPolishesWithBrandSizePrice: true
+      gelPolishesWithBrandSizePrice: {
+        include: {
+          brand: true,
+          sizeAndPrice: true,
+        },
+      },
     }
   })
   console.log(gelPolishes)
@@ -94,6 +86,16 @@ export default async function Page() {
         <Input name="title" placeholder="TITLE" />
         <Input name="imageAlt" placeholder="imageALT" />
         <Input name="file" placeholder="imageSrc" type="file" />
+        <select name="brand">
+          {brands.map(brand =>
+            <option key={brand.id} value={brand.id}>{brand.brand}</option>
+          )}
+        </select>
+        <select name="sizeAndPrice">
+          {sizeAndPrice.map(sizeAndPrice =>
+            <option key={sizeAndPrice.id} value={sizeAndPrice.id}>{sizeAndPrice.size} ${sizeAndPrice.price}</option>
+          )}
+        </select>
         <Button>Create</Button>
       </form>
       <form action={createBrand}>
@@ -104,10 +106,6 @@ export default async function Page() {
       <form action={createSize}>
         <h1>CREAT Size</h1>
         <Input name="size" placeholder="Size" />
-        <Button>Create</Button>
-      </form>
-      <form action={createPrice}>
-        <h1>CREAT </h1>
         <Input name="price" placeholder="Price" />
         <Button>Create</Button>
       </form>
