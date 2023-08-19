@@ -48,39 +48,46 @@ model Banner {
 // GelPolishes
 
 model GelPolishes {
-  id        Int      @id @default(autoincrement())
-  title     String
-  imageSrc  String
-  imageAlt  String
-  discount  Boolean  @default(false)
-  publish   Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  sizes  GelPolishSize[]
-  prices GelPolishPrice[]
-  brands GelPolishBrand[]
+  id                            Int                             @id @default(autoincrement())
+  title                         String
+  imageSrc                      String
+  imageAlt                      String
+  discount                      Boolean                         @default(false)
+  publish                       Boolean                         @default(false)
+  createdAt                     DateTime                        @default(now())
+  updatedAt                     DateTime                        @updatedAt
+  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
 }
 
-model GelPolishBrand {
-  id          Int         @id @default(autoincrement())
-  brand       String
-  gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
-  gelPolishId Int
+model Brand {
+  id                            Int                             @id @default(autoincrement())
+  brand                         String
+  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
 }
 
-model GelPolishSize {
-  id          Int         @id @default(autoincrement())
-  size        String
-  gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
-  gelPolishId Int
+model Size {
+  id                            Int                             @id @default(autoincrement())
+  size                          String
+  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
 }
 
-model GelPolishPrice {
-  id          Int         @id @default(autoincrement())
-  price       Float
+model Price {
+  id                            Int                             @id @default(autoincrement())
+  price                         Float
+  GelPolishesWithBrandSizePrice GelPolishesWithBrandSizePrice[]
+}
+
+model GelPolishesWithBrandSizePrice {
   gelPolish   GelPolishes @relation(fields: [gelPolishId], references: [id])
   gelPolishId Int
+  brand       Brand       @relation(fields: [brandId], references: [id])
+  brandId     Int
+  size        Size        @relation(fields: [sizeId], references: [id])
+  sizeId      Int
+  price       Price       @relation(fields: [priceId], references: [id])
+  priceId     Int
+
+  @@id([gelPolishId, brandId, sizeId, priceId])
 }
 
 // Post ====================================================================================================
