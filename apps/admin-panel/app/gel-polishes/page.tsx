@@ -21,18 +21,13 @@ async function createGelPolishes(data: FormData) {
   }
 }
 
-async function createGelPolishesBrand(data: FormData) {
+async function createBrand(data: FormData) {
   'use server'
   const brand = data.get('brand') as string
 
-  const create = await prisma.gelPolishBrand.create({
+  const create = await prisma.brand.create({
     data: {
       brand: brand,
-      gelPolish: {
-        connect: {
-          id: 1,
-        },
-      }
     }
   })
 
@@ -41,88 +36,11 @@ async function createGelPolishesBrand(data: FormData) {
   }
 }
 
-async function createCategory(data: FormData) {
-  'use server'
-  const category = data.get('category') as string
-
-  const create = await prisma.category.create({
-    data: {
-      name: category
-    }
-  })
-
-  if (create) {
-    revalidatePath('gel-polishes')
-  }
-}
-
-async function createPost(data: FormData) {
-  'use server'
-  const title = data.get('title') as string
-
-  const create = await prisma.post.create({
-    data: {
-      title: title,
-      categories: {
-        createMany: {
-          data: [
-            {
-              categoryId: 1,
-              assignedBy: 'men'
-            },
-            {
-              categoryId: 2,
-              assignedBy: 'men'
-            }
-          ]
-        }
-      }
-    }
-  })
-
-  if (create) {
-    revalidatePath('gel-polishes')
-  }
-}
 export default async function Page() {
-  const gelPolishes = await prisma.gelPolishes.findMany({
-    include: {
-      brands: true,
-      sizes: true,
-      prices: true
-    }
-  })
-  // console.log(gelPolishes)
-  // const gelPolishSize = await prisma.gelPolishSize.findMany()
-  // console.log(gelPolishSize)
-  // const gelPolishPrice = await prisma.gelPolishPrice.findMany()
-  // console.log(gelPolishPrice)
-  // const gelPolishBrand = await prisma.gelPolishBrand.findMany()
-  // console.log(gelPolishBrand)
-
-  const posts = await prisma.post.findMany({
-    include: {
-      categories: true
-    }
-  })
-  console.log(posts)
-  const categories = await prisma.category.findMany()
-  console.log(categories)
-  // const categoriesOnPosts = await prisma.categoriesOnPosts.findMany()
-  // console.log(categoriesOnPosts)
-
+  const brands = await prisma.brand.findMany()
+  console.log(brands)
   return (
     <div>
-      <form action={createCategory}>
-        <h1>category</h1>
-        <Input name="category" placeholder="Category" />
-        <Button>Create</Button>
-      </form>
-      <form action={createPost}>
-        <h1>Post</h1>
-        <Input name="title" placeholder="title" />
-        <Button>Create</Button>
-      </form>
       <form action={createGelPolishes}>
         <h1>CREAT PRODUCT</h1>
         <Input name="title" placeholder="TITLE" />
@@ -130,7 +48,7 @@ export default async function Page() {
         <Input name="file" placeholder="imageSrc" type="file" />
         <Button>Create</Button>
       </form>
-      <form action={createGelPolishesBrand}>
+      <form action={createBrand}>
         <h1>CREAT PRODUCT BRAND</h1>
         <Input name="brand" placeholder="Brand" />
         <Button>Create</Button>
