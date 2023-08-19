@@ -7,3 +7,4 @@ export { BurgerMenu } from './BurgerMenu'
 export { LogoShop } from './LogoShop'
 export { Input } from './Input'
 export {Table, TableRow, TableCell} from "./tables"
+export { Select } from './Select'

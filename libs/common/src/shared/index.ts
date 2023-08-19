@@ -1,5 +1,5 @@
 // UI
-export { Ibg, Wrapper, Button, Text, Loader, BurgerMenu, LogoShop, Input, Table, TableRow, TableCell } from './UI'
+export { Ibg, Wrapper, Button, Text, Loader, BurgerMenu, LogoShop, Input, Table, TableRow, TableCell, Select } from './UI'
 
 // Components
 export { ModalWindow, Container, Section } from './components'
@@ -18,7 +18,7 @@ export {
   IconLogoShop,
   IconBag,
   IconShowPassword,
-  IconHidePassword, IconStar, IconCircle, IconDollar, IconStarFull, IconBagOFMoney, IconCircleFull, IconLove
+  IconHidePassword, IconStar, IconCircle, IconDollar, IconStarFull, IconBagOFMoney, IconCircleFull, IconLove, IconArrow
 } from './assets'
 
 // Constants

@@ -15,3 +15,4 @@ export { ReactComponent as IconCircleFull } from "./icons/circleFull.svg"
 export { ReactComponent as IconCircle } from "./icons/circle.svg"
 export { ReactComponent as IconBagOFMoney } from "./icons/BagOFMoney.svg"
 export { ReactComponent as IconLove } from './icons/love.svg'
+export { ReactComponent as IconArrow } from './icons/arrow.svg'

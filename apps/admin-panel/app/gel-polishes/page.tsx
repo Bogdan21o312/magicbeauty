@@ -1,4 +1,4 @@
-import { Button, Input } from "@magicbeauty/common"
+import { Button, Input, Select } from "@magicbeauty/common"
 import { prisma, uploadImageToCloudinary } from "@magicbeauty/common/server"
 import { revalidatePath } from "next/cache"
 
@@ -86,16 +86,16 @@ export default async function Page() {
         <Input name="title" placeholder="TITLE" />
         <Input name="imageAlt" placeholder="imageALT" />
         <Input name="file" placeholder="imageSrc" type="file" />
-        <select name="brand">
+        <Select name="brand" title="Brend">
           {brands.map(brand =>
             <option key={brand.id} value={brand.id}>{brand.brand}</option>
           )}
-        </select>
-        <select name="sizeAndPrice">
+        </Select>
+        <Select name="sizeAndPrice" title="Size and price">
           {sizeAndPrice.map(sizeAndPrice =>
             <option key={sizeAndPrice.id} value={sizeAndPrice.id}>{sizeAndPrice.size} ${sizeAndPrice.price}</option>
           )}
-        </select>
+        </Select>
         <Button>Create</Button>
       </form>
       <form action={createBrand}>

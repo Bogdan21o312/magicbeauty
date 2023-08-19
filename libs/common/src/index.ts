@@ -51,5 +51,5 @@ export {
   TypeDeviceType,
   useDeviceType,
   useScrollLessThanY,
-  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask, Table, TableRow, TableCell, Section, IconCircleFull, IconBagOFMoney, IconStarFull, IconDollar, IconCircle, IconStar, useParallaxMouseEffect, IconLove
+  generateRandomNumber, phoneRegex, IconShowPassword, IconHidePassword, usePhoneMask, Table, TableRow, TableCell, Section, IconCircleFull, IconBagOFMoney, IconStarFull, IconDollar, IconCircle, IconStar, useParallaxMouseEffect, IconLove, IconArrow, Select
 } from './shared'

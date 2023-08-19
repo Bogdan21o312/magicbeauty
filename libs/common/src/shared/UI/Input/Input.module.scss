@@ -27,11 +27,12 @@
 }
 
 .formControl {
+  font-weight: 500;
   display: block;
   line-height: 2em;
   margin: 0;
   width: 100%;
-  font-size: medium;
+  font-size: rem(16);
   border: rem(2) solid $ColorMain;
   background-color: $ColorWhite;
   border-radius: rem(36);
