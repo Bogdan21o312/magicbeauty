@@ -19,7 +19,6 @@ async function a(data: FormData) {
 
 export default async function Banner() {
   const data = await prisma.banner.findMany()
-  console.log(data)
   return (
     <div>
       <form action={a}>
