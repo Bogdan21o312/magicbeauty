@@ -1,3 +1,3 @@
-export { TypeIbg } from './TypeIbg'
-export {TypeDeviceType} from "./TypeDeviceType"
-export {IValidations} from "./IValidations"
+export type { TypeIbg } from './TypeIbg'
+export type { TypeDeviceType } from "./TypeDeviceType"
+export type { IValidations } from "./IValidations"
