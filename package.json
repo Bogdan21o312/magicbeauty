@@ -2,7 +2,9 @@
   "name": "@magicbeauty/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "node dist/apps/shop/main.js"
+  },
   "private": true,
   "dependencies": {
     "@nx/next": "16.5.3",
