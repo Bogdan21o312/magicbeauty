@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/apps/shop/main.js"
+    "build": "npx nx build shop --prod",
+    "start": "npx nx serve shop"
   },
   "private": true,
   "dependencies": {
