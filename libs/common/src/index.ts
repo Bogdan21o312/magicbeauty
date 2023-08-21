@@ -6,10 +6,11 @@ export { EntityGelPolishesProductCard } from './entites'
 export { AuthProvider } from './providers'
 
 // Features
-export { } from './features'
+export { FeatureGelPolishesSlider } from './features'
 
 // Shared
 export {
+  TitleAndLinkBlock,
   ModalWindow,
   Button,
   IconSearch,

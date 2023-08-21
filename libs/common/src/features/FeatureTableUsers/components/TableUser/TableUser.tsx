@@ -20,7 +20,9 @@ export function TableUser({
                             surname,
                             settlement,
                             updatedAt,
-                            country
+                            country,
+                            ban,
+                            banResponse
                           }: TableUserProps) {
   const isUpdate = createdAt.toISOString() === updatedAt.toISOString()
   const updateText = isUpdate ? 'Ще не було оновлень' : updatedAt.toISOString()
