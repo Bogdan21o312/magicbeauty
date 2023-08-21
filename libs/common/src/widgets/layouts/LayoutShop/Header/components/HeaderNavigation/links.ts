@@ -1,33 +1,23 @@
-import {
-  SHOP_ABOUT_PAGE_URL,
-  SHOP_CATEGORIES_PAGE_URL,
-  SHOP_HOME_PAGE_URL, SHOP_NEWS_PAGE_URL, SHOP_OPT_PAGE_URL
-
-} from '../../../../../../shared'
 
 export const links = [
   {
     text: 'Головна',
-    link: SHOP_HOME_PAGE_URL,
+    link: '/',
   },
   {
     text: 'Категорії',
-    link: SHOP_CATEGORIES_PAGE_URL,
+    link: '/category',
   },
   {
     text: 'Про нас',
-    link: SHOP_ABOUT_PAGE_URL,
+    link: '/about',
   },
   {
     text: 'Новини',
-    link: SHOP_NEWS_PAGE_URL,
+    link: '/news',
   },
   {
     text: 'Опт',
-    link: SHOP_OPT_PAGE_URL,
-  },
-  {
-    text: 'Auth',
-    link: '/auth',
+    link: '/opt',
   },
 ]

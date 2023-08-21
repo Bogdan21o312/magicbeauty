@@ -39,8 +39,6 @@ model Banner {
   id          Int      @id @default(autoincrement())
   title       String
   description String
-  src         String
-  alt         String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

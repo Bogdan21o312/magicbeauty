@@ -2,7 +2,6 @@
 import classes from './HeaderContent.module.scss'
 import Link from 'next/link'
 import { bodyToggleLock } from '../../../../../shared/lib/helpers/page-lock-status/bodyToggleLock'
-import { SHOP_HOME_PAGE_URL } from '../../../../../shared/constants/shop-pages-paths/shop-pages-paths'
 import { useMediaQuery } from '../../../../../shared/lib/hooks/useMediaQuery/useMediaQuery'
 import { Container, LogoShop, TypeDeviceType, useScrollLessThanY } from '../../../../../shared'
 import { useState } from 'react'
@@ -27,7 +26,7 @@ export function HeaderContent({ isTouchDevice }: TypeDeviceType) {
       <Container>
         <div className={classes.content}>
           <div className={classes.logo}>
-            <Link href={SHOP_HOME_PAGE_URL}>
+            <Link href={'/SHOP_HOME_PAGE_URL'}>
               <LogoShop small={scrollHeader} text={!touchScreenOrMediaQuery && !mediaSmall} />
             </Link>
           </div>
