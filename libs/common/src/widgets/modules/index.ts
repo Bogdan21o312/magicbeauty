@@ -1,2 +1,5 @@
-export {ModuleBanner} from "./ModuleBanner"
-export {ModuleAuth} from "./ModuleAuth"
+export { ModuleBanner } from "./ModuleBanner"
+export { ModuleAuth } from "./ModuleAuth"
+export {
+  ModuleGelPolishesNew
+} from './gel-polishes'

@@ -10,6 +10,7 @@ export { } from './features'
 
 // Shared
 export {
+  TitleAndLinkBlock,
   ModalWindow,
   Button,
   IconSearch,

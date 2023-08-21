@@ -1,0 +1,29 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: ram(16);
+}
+
+.link {
+  font-size: rem(18);
+  display: flex;
+  align-items: center;
+  gap: rem(16);
+  transition: all 0.3s ease;
+  svg {
+    pointer-events: none;
+    transform: rotate(-90deg);
+  }
+  path,
+  svg {
+    fill: $ColorMain !important;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: $ColorMain;
+    }
+  }
+}
