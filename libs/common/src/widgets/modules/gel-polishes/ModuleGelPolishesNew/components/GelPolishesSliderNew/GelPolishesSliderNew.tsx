@@ -1,4 +1,5 @@
 'use client'
+import classes from './GelPolishesSliderNew.module.scss'
 import { GelPolishesSliderNewProps } from "./GelPolishesSliderNewProps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -8,6 +9,7 @@ export function GelPolishesSliderNew({ gelPolishes }: GelPolishesSliderNewProps)
 
   return (
     <Swiper
+      className={classes.swiper}
       loop={false}
       pagination={{
         clickable: true,

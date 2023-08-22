@@ -5,3 +5,11 @@ export {
   ADMIN_PANEL_BRANDS_PAGE_URL,
   ADMIN_PANEL_GEL_POLISHES_PAGE_URL
 } from './path-pages-admin-panel'
+
+export {
+  SHOP_OPT_PAGE_URL,
+  SHOP_HOME_PAGE_URL,
+  SHOP_NEWS_PAGE_URL,
+  SHOP_ABOUT_PAGE_URL,
+  SHOP_CATEGORIES_PAGE_URL
+} from './path-pages-shop'
