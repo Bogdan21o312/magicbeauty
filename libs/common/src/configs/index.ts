@@ -1,1 +1,1 @@
-export {authConfig} from "./authConfig"
+export { authConfig } from "./authConfig"

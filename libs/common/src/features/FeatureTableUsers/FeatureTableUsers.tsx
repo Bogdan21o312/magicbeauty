@@ -1,7 +1,6 @@
 import classes from './FeatureTableUsers.module.scss'
 import { deleteUser, prisma } from '../../actions'
 import { TableUser } from './components'
-import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
 
 async function deleteUserAction(id: number) {
@@ -11,24 +10,16 @@ async function deleteUserAction(id: number) {
 
 async function search(data: FormData) {
   'use server'
-  const cookieStore = cookies()
   revalidatePath('/users')
 }
 
 async function getAllUsersBySearch(page: number, pageSize: number) {
   'use server'
-  const cookieStore = cookies()
-  // cookieStore.set('paggination', '')
-  const pagginationGet = cookieStore.get('paggination')?.value
-  console.log(pagginationGet)
-
-  const name = cookieStore.get('name')?.value
   const skip = (page - 1) * pageSize
 
   const totalUsers = await prisma.user.count({
     where: {
       firstName: {
-        contains: name,
         mode: 'insensitive'
       }
     }
@@ -37,7 +28,6 @@ async function getAllUsersBySearch(page: number, pageSize: number) {
   const users = await prisma.user.findMany({
     where: {
       firstName: {
-        contains: name,
         mode: 'insensitive'
       }
     },
