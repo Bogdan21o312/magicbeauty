@@ -1,6 +1,7 @@
 import { EntityGelPolishesProductCard } from "../../../../entites";
 import { prisma } from "../../../../actions";
 import { Container, Section, TitleAndLinkBlock } from "../../../../shared";
+import { GelPolishesSliderNew } from "./components";
 
 export async function ModuleGelPolishesNew() {
   const gelPolishesWithDetails = await prisma.gelPolishesWithBrandSizePrice.findMany({
@@ -27,20 +28,12 @@ export async function ModuleGelPolishesNew() {
       },
     },
   });
-  console.log(gelPolishesWithDetails)
+
   return (
     <Section>
       <Container>
         <TitleAndLinkBlock title="Tilte" linkText="link" linkSrc="/" />
-        <div style={{ display: 'flex' }}>
-          {gelPolishesWithDetails.map(gelPolish =>
-            <EntityGelPolishesProductCard
-              key={gelPolish.gelPolish.imageSrc}
-              gelPolish={gelPolish.gelPolish}
-              sizeAndPrice={gelPolish.sizeAndPrice}
-              brand={gelPolish.brand} />
-          )}
-        </div>
+        <GelPolishesSliderNew gelPolishes={gelPolishesWithDetails} />
       </Container>
     </Section>
   )

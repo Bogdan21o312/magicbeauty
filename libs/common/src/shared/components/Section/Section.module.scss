@@ -1,4 +1,5 @@
 .main {
+  @include adaptiveValue('margin-bottom', 128, 64);
 }
 
 .fullScreen {
