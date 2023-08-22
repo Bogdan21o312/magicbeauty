@@ -71,4 +71,5 @@ export {
   ADMIN_PANEL_BANNER_PAGE_URL,
   ADMIN_PANEL_PRICE_AND_SIZE,
   ADMIN_PANEL_HOME_PAGE_URL,
+  TypeGelPolishesWithBrandSizePrice
 } from './shared'
