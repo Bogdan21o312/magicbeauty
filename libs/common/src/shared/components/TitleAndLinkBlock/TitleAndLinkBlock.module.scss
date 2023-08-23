@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   gap: ram(16);
-  @include adaptiveValue('margin-bottom', 50, 30);
+  @include adaptiveValue('margin-bottom', 60, 30);
 }
 
 .link {
