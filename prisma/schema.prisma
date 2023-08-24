@@ -7,13 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Language {
-  id    Int    @id @default(autoincrement())
-  code  String @unique
-  name  String
-  posts Post[]
-}
-
 // User ====================================================================================================
 
 model User {
@@ -95,21 +88,31 @@ model GelPolishesWithBrandSizePrice {
 // Post ====================================================================================================
 
 model Post {
-  id           Int         @id @default(autoincrement())
-  title        String      @unique
+  id           Int        @id @default(autoincrement())
+  title        String     @unique
   text         String
   imageSrc     String
   imageAlt     String
-  publish      Boolean     @default(false)
-  createdAt    DateTime    @default(now())
-  updatedAt    DateTime    @updatedAt
-  language     Language    @relation(fields: [languageCode], references: [code])
+  publish      Boolean    @default(false)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  language     Language   @relation(fields: [languageCode], references: [code])
   languageCode String
-  categoris    Categoris[]
+  categoris    Category[]
 }
 
-model Categoris {
-  id    Int    @id @default(autoincrement())
-  name  String @unique
-  posts Post[]
+model Category {
+  id           Int      @id @default(autoincrement())
+  name         String   @unique
+  language     Language @relation(fields: [languageCode], references: [code])
+  languageCode String
+  posts        Post[]
+}
+
+model Language {
+  id        Int        @id @default(autoincrement())
+  code      String     @unique
+  name      String
+  posts     Post[]
+  categoris Category[]
 }

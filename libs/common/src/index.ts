@@ -10,6 +10,7 @@ export { FeatureGelPolishesSlider } from './features'
 
 // Shared
 export {
+  ADMIN_PANEL_LANGUAGE_PAGE_URL,
   TitleAndLinkBlock,
   ModalWindow,
   Button,
