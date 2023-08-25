@@ -45,10 +45,6 @@ export async function FeatureTableUsers() {
   console.log(usersAll)
   const totalPages = Math.ceil(totalUsers / pageSize)
   console.log(totalPages)
-  const paginationButtons = []
-  for (let page = 1; page <= totalPages; page++) {
-    paginationButtons.push(<div key={page}>{page}</div>)
-  }
   return (
     <div>
       <form action={search}>
@@ -81,7 +77,6 @@ export async function FeatureTableUsers() {
           ))}
         </tbody>
       </table>
-      {paginationButtons}
     </div>
   )
 }
