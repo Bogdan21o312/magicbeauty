@@ -4,10 +4,10 @@ export {
 } from './actions'
 
 // Widgets
-export { LayoutShop, ModuleBanner, LayoutAdminPanel, ModuleAuth, ModuleGelPolishesNew } from './widgets'
+export { LayoutShop, ModuleBanner, LayoutAdminPanel, ModuleAuth, ModuleGelPolishesNew, ModulePosts } from './widgets'
 
 // Features
-export { FeatureTableUsers } from './features/server'
+export { FeatureTableUsers, FeaturePostsList } from './features/server'
 
 // Entites
 

@@ -1,4 +1,3 @@
-import { EntityGelPolishesProductCard } from "../../../../entites";
 import { prisma } from "../../../../actions";
 import { Container, Section, TitleAndLinkBlock } from "../../../../shared";
 import { GelPolishesSliderNew } from "./components";

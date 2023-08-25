@@ -4,10 +4,7 @@ async function a(data: FormData) {
   'use server'
   const title = data.get('title') as string
   const description = data.get('description') as string
-  await prisma.banner.update({
-    where: {
-      id: 1
-    },
+  await prisma.banner.create({
     data: {
       title: title,
       description: description,

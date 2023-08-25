@@ -1,0 +1,1 @@
+export { ModulePosts } from './ModulePosts'
