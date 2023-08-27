@@ -31,6 +31,7 @@ export {
 
 // Constants
 export {
+  ADMIN_PANEL_CATEGORICAL_BUSINESS_CARDS_PAGE_URL,
   regexTabletType,
   regexMobileType,
   emailRegex,

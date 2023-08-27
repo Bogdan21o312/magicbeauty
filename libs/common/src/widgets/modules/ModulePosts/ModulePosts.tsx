@@ -8,6 +8,7 @@ export async function ModulePosts() {
       <Container>
         <TitleAndLinkBlock title="Нові пости" linkText="Переглянути всі пости" linkSrc="/" />
       </Container>
+      <FeaturePostsList />
     </Section>
   )
 }

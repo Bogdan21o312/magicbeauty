@@ -1,14 +1,16 @@
+import classes from './FeaturePostsList.module.scss'
 import { Container } from "../../shared"
 import { prisma } from "../../actions"
+import { Post } from "./components"
 
 export async function FeaturePostsList() {
-  const fdaksjfdakslfsdka = await prisma.post.findMany()
-  console.log(fdaksjfdakslfsdka)
+  const posts = await prisma.post.findMany()
   return (
     <Container>
-      {fdaksjfdakslfsdka.map(m =>
-        <div key={m.id}>{m.id}</div>
+      <div className={classes.items}>      {posts.map(post =>
+        <Post key={post.id} post={post} />
       )}
+      </div>
     </Container>
   )
 }

@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 @import 'libs/common/src/shared/assets/styles/style';
 
 // MainSlider ====================================================================================================
@@ -8,7 +8,6 @@
 }
 
 // Title ====================================================================================================
-
 
 .clTitleBig {
   font-weight: 700;
@@ -23,8 +22,8 @@
 }
 
 .clTitleSub {
-  font-weight: 500;
-  font-size: rem(18);
+  font-weight: 700;
+  font-size: rem(20);
   line-height: math.div(34, 18);
 }
 

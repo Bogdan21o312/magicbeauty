@@ -1,14 +1,15 @@
 'use client'
-import { Text } from '../../../../shared'
+import { Ibg, Text } from '../../../../shared'
 import classes from './Post.module.scss'
 import { PostProps } from "./PostProps"
 
-export function Post({ title, imageAlt, imageSrc, text, createdAt }: PostProps) {
+export function Post({ post }: PostProps) {
 
   return (
     <div className={classes.main}>
-      <Text>{title}</Text>
-      <Text>{text}</Text>
+      <Ibg src={post.imageSrc} alt={post.imageAlt} modClass={classes.image} />
+      <Text type='titleSub'>{post.title}</Text>
+      <Text type='textSmall'>{post.text}</Text>
     </div>
   )
 }
