@@ -1,4 +1,4 @@
-import 'libs/common/src/shared/assets/styles/globals.scss'
+import './globals.scss'
 import 'swiper/css'
 import { LayoutShop } from '@magicbeauty/common/server'
 import { ReactNode } from 'react'

@@ -1,4 +1,4 @@
-import 'libs/common/src/shared/assets/styles/globals.scss'
+import './globals.scss'
 import { ReactNode } from 'react'
 import { LayoutAdminPanel } from '@magicbeauty/common/server'
 import { AuthProvider } from '@magicbeauty/common'
