@@ -1,7 +1,6 @@
 import classes from './FeatureTableUsers.module.scss'
 import { deleteUser, prisma } from '../../actions'
 import { TableUser } from './components'
-import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
 
 async function deleteUserAction(id: number) {
@@ -11,24 +10,16 @@ async function deleteUserAction(id: number) {
 
 async function search(data: FormData) {
   'use server'
-  const cookieStore = cookies()
   revalidatePath('/users')
 }
 
 async function getAllUsersBySearch(page: number, pageSize: number) {
   'use server'
-  const cookieStore = cookies()
-  // cookieStore.set('paggination', '')
-  const pagginationGet = cookieStore.get('paggination')?.value
-  console.log(pagginationGet)
-
-  const name = cookieStore.get('name')?.value
   const skip = (page - 1) * pageSize
 
   const totalUsers = await prisma.user.count({
     where: {
       firstName: {
-        contains: name,
         mode: 'insensitive'
       }
     }
@@ -37,7 +28,6 @@ async function getAllUsersBySearch(page: number, pageSize: number) {
   const users = await prisma.user.findMany({
     where: {
       firstName: {
-        contains: name,
         mode: 'insensitive'
       }
     },
@@ -51,26 +41,18 @@ async function getAllUsersBySearch(page: number, pageSize: number) {
 export async function FeatureTableUsers() {
   const pageSize = 5
   const { users, totalUsers } = await getAllUsersBySearch(1, pageSize)
+  const usersAll = await prisma.user.findMany()
+  console.log(usersAll)
   const totalPages = Math.ceil(totalUsers / pageSize)
   console.log(totalPages)
-  const paginationButtons = []
-  for (let page = 1; page <= totalPages; page++) {
-    paginationButtons.push(
-      <div
-        key={page}
-      >
-        {page}
-      </div>
-    )
-  }
   return (
     <div>
       <form action={search}>
-        <input type='text' name='search' placeholder='Search' />
+        <input type="text" name="search" placeholder="Search" />
       </form>
       <table className={classes.table}>
         <tbody>
-          {users.map((user, index) =>
+          {users.map((user, index) => (
             <TableUser
               key={user.id}
               id={user.id}
@@ -92,10 +74,9 @@ export async function FeatureTableUsers() {
               index={index + 1}
               deleteUser={deleteUserAction}
             />
-          )}
+          ))}
         </tbody>
       </table>
-      {paginationButtons}
     </div>
   )
 }

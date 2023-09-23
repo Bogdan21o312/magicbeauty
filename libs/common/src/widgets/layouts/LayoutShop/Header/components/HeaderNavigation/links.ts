@@ -1,23 +1,20 @@
+import { SHOP_ABOUT_PAGE_URL, SHOP_CATEGORIES_PAGE_URL, SHOP_NEWS_PAGE_URL, SHOP_OPT_PAGE_URL } from '../../../../../../shared'
 
 export const links = [
   {
-    text: 'Головна',
-    link: '/',
-  },
-  {
     text: 'Категорії',
-    link: '/category',
+    link: SHOP_CATEGORIES_PAGE_URL,
   },
   {
     text: 'Про нас',
-    link: '/about',
+    link: SHOP_ABOUT_PAGE_URL,
   },
   {
     text: 'Новини',
-    link: '/news',
+    link: SHOP_NEWS_PAGE_URL,
   },
   {
     text: 'Опт',
-    link: '/opt',
+    link: SHOP_OPT_PAGE_URL,
   },
 ]

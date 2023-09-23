@@ -1,1 +1,1 @@
-export {ModuleAuth} from "./ModuleAuth"
+export { ModuleAuth } from "./ModuleAuth"

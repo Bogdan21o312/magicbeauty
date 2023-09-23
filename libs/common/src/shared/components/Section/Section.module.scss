@@ -1,4 +1,7 @@
+@import 'libs/common/src/shared/assets/styles/style';
+
 .main {
+  @include adaptiveValue('margin-bottom', 128, 64);
 }
 
 .fullScreen {

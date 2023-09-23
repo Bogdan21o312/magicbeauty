@@ -5,7 +5,7 @@ export { Ibg, Wrapper, Button, Text, Loader, BurgerMenu, LogoShop, Input, Table,
 export { ModalWindow, Container, Section, TitleAndLinkBlock } from './components'
 
 // Types
-export type { TypeIbg, TypeDeviceType, IValidations } from './types'
+export type { TypeIbg, TypeDeviceType, IValidations, TypeGelPolishesWithBrandSizePrice } from './types'
 
 // Icons
 export {
@@ -31,6 +31,7 @@ export {
 
 // Constants
 export {
+  ADMIN_PANEL_CATEGORICAL_BUSINESS_CARDS_PAGE_URL,
   regexTabletType,
   regexMobileType,
   emailRegex,
@@ -41,10 +42,17 @@ export {
   minLengthRegex,
   phoneRegex,
   ADMIN_PANEL_HOME_PAGE_URL,
-  ADMIN_PANEL_PRICE_AND_SIZE,
+  ADMIN_PANEL_PRICE_AND_SIZE_PAGE_URL,
   ADMIN_PANEL_BANNER_PAGE_URL,
   ADMIN_PANEL_BRANDS_PAGE_URL,
-  ADMIN_PANEL_GEL_POLISHES_PAGE_URL
+  ADMIN_PANEL_GEL_POLISHES_PAGE_URL,
+  ADMIN_PANEL_POSTS_PAGE_URL,
+  SHOP_OPT_PAGE_URL,
+  SHOP_HOME_PAGE_URL,
+  SHOP_NEWS_PAGE_URL,
+  SHOP_ABOUT_PAGE_URL,
+  SHOP_CATEGORIES_PAGE_URL,
+  ADMIN_PANEL_LANGUAGE_PAGE_URL
 } from './constants'
 
 // Lib

@@ -5,7 +5,7 @@ import { Icons } from './components'
 
 export async function ModuleBanner() {
   const banner = await prisma.banner.findFirst()
-  console.log(banner)
+
   return banner && (
     <Section fullScreen>
       <Container>

@@ -1,8 +1,7 @@
-import 'libs/common/src/shared/assets/styles/globals.scss'
+import './globals.scss'
 import 'swiper/css'
 import { LayoutShop } from '@magicbeauty/common/server'
 import { ReactNode } from 'react'
-import { Providers } from './Providers'
 
 export const metadata = {
   title: 'Welcome to shop',
@@ -17,11 +16,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <Providers>
-          <LayoutShop>
-            {children}
-          </LayoutShop>
-        </Providers>
+        <LayoutShop>
+          {children}
+        </LayoutShop>
       </body>
     </html>
   )

@@ -3,26 +3,25 @@ import classes from './EntityGelPolishesProductCard.module.scss'
 import { EntityGelPolishesProductCardProps } from './EntityGelPolishesProductCardProps'
 import { Text, Ibg, IconCart, IconLove, Button } from "../../../shared"
 
-export function EntityGelPolishesProductCard({ title, imageSrc, imageAlt, size, name, price }: EntityGelPolishesProductCardProps) {
+export function EntityGelPolishesProductCard({ gelPolish, sizeAndPrice, brand }: EntityGelPolishesProductCardProps) {
 
   return (
     <div className={classes.main}>
       <div className={classes.mainImage}>
-        <Ibg src={imageSrc!} alt={imageAlt!} modClass={classes.clImage}></Ibg>
+        <Ibg src={gelPolish.imageSrc} alt={gelPolish.imageAlt} modClass={classes.clImage}></Ibg>
       </div>
       <div className={classes.blockText}>
-        <Text type='titleSub'>{title}</Text>
         <div className={classes.flex}>
-          <Text opacity type='textSmall'>{size}</Text>
-          <Text opacity type='textSmall'>{name}</Text>
+          <Text type='titleSub'>{gelPolish.title}</Text>
+          <Text opacity type='textSmall'>{brand.brand}</Text>
         </div>
       </div>
       <div className={classes.mainLine}></div>
-      <div className={classes.clPrice}>
-        <div className={classes.priceNum}>
-          {price}
+      <div className={classes.blockText}>
+        <div className={classes.flex}>
+          <Text type='titleSub'>{sizeAndPrice.price} грн</Text>
+          <Text opacity type='textSmall'>{sizeAndPrice.size} мл</Text>
         </div>
-        <button className={classes.priceLove}><IconLove /></button>
       </div>
       <Button widthHundredPercent>Купити <IconCart /></Button>
     </div>
